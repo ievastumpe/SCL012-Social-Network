@@ -3,7 +3,10 @@ function registrar(){
     const contrasena = document.getElementById("contrasena").value;
 
     firebase.auth().createUserWithEmailAndPassword(email, contrasena)
-        .catch(function(error) {
+    .then(function(){
+        verificar()
+    })    
+    .catch(function(error) {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -30,8 +33,14 @@ function observador(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
         console.log("existe usuario activo")
+        aparece()
           const displayName = user.displayName;
           const email = user.email;
+          
+          console.log('***********');
+          console.log(user.emailVerified);
+          console.log('**********');
+
           const emailVerified = user.emailVerified;
           const photoURL = user.photoURL;
           const isAnonymous = user.isAnonymous;
@@ -45,4 +54,30 @@ function observador(){
 }
 observador();
 
-  
+function aparece(){
+    const contenido = document.getElementById("contenido");
+    contenido.innerHTML = `
+    <p>Bienvenido!</p>
+    <button onclick="cerrar()">cerrar sessión</button>
+    `;
+}
+
+function cerrar(){
+    firebase.auth().signOut()
+    .then(function(){
+        console.log("saliendo...")
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+}
+
+function verificar(){
+    const user = firebase.auth().currentUser;
+
+    user.sendEmailVerification().then(function() {
+        console.log("enviando email...");
+    }).catch(function(error) {
+        console.log(error);
+    });
+}
