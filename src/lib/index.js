@@ -1,84 +1,78 @@
 // aqui exportaras las funciones que necesites
 
 export const registrar = () => {
-  const email = document.getElementById('email').value;
-  console.log(email);
-  const password = document.getElementById('password').value;
-  console.log(password);
+  const email = document.getElementById("email").value;
+  const contrasena = document.getElementById("contrasena").value;
 
-// Autentificar utilizando Firebase
-firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  const errorCode = error.code;
-  console.log(errorCode);
-  const errorMessage = error.message;
-  console.log(errorMessage);
-  // ...
-})
-
-};
-
-export const ingreso = () => {
-  const email2 = document.getElementById('email2').value;
-  console.log(email2);
-  const password2 = document.getElementById('password2').value;
-  console.log(password2); 
-
-  firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
-    // Handle Errors here.
-    const errorCode = error.code;
-    console.log(errorCode);
-    const errorMessage = error.message;
-    console.log(errorMessage);
-    // ...
-  });
-  
-};
-
-export const cerrar = () => {
-  firebase.auth().signOut()
+  firebase.auth().createUserWithEmailAndPassword(email, contrasena)
   .then(function(){
-      console.log('Saliendo...')
+      verificar()
+  })    
+  .catch(function(error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+  });
+}
 
-  })
-  .catch(function(error){
-      console.log(error)
+export const  ingreso = () => {
+  const emailIngreso = document.getElementById("emailIngreso").value;
+  const contrasenaIngreso = document.getElementById("contrasenaIngreso").value;
 
-  })
-};
-
-export const aparece = () => {
-
-  document.getElementById('logOut').addEventListener('click', cerrar);
-
-  const contenido = document.getElementById('content');
-  contenido.innerHTML = `
-  <p>Bienvenido</p>
-  <button id="logOut">Cerrar Sesión</button>
-  
-  `
-};
+  firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
+      .catch(function(error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+  });
+}
 
 export const observador = () => {
   firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('existe usuario activo')
-      // En caso de que el usuario esté activo
-      aparece()
-      // User is signed in.
-      const displayName = user.displayName;
-      const email = user.email;
-      console.log(user);
-      const emailVerified = user.emailVerified;
-      const photoURL = user.photoURL;
-      const isAnonymous = user.isAnonymous;
-      const uid = user.uid;
-      const providerData = user.providerData;
-      // ...
-    } else {
-      // User is signed out.
-      console.log('no existe usuario activo')
-      // ...
-    }
-  })
-};
+      if (user) {
+      console.log("existe usuario activo")
+    //   aparece()
+        const displayName = user.displayName;
+        const email = user.email;
+        
+        console.log('***********');
+        console.log(user.emailVerified);
+        console.log('**********');
+
+        const emailVerified = user.emailVerified;
+        const photoURL = user.photoURL;
+        const isAnonymous = user.isAnonymous;
+        const uid = user.uid;
+        const providerData = user.providerData;
+        // ...
+      } else {
+      console.log("no existe usuario activo")
+      }
+  });
+}
+observador();
+
+
+export const cerrar = () => {
+    firebase.auth().signOut()
+    .then(function(){
+        console.log("saliendo...")
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+}
+
+export const verificar = () => {
+    const user = firebase.auth().currentUser;
+
+    user.sendEmailVerification().then(function() {
+        console.log("enviando email...");
+    }).catch(function(error) {
+        console.log(error);
+    })
+}
