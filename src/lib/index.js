@@ -1,10 +1,10 @@
 // aqui exportaras las funciones que necesites
 
-export const registrar = () => {
+export const register = () => {
   const email = document.getElementById("email").value;
-  const contrasena = document.getElementById("contrasena").value;
+  const password = document.getElementById("contrasena").value;
 
-  firebase.auth().createUserWithEmailAndPassword(email, contrasena)
+  firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function(){
       verificar()
   })    
@@ -17,11 +17,11 @@ export const registrar = () => {
   });
 }
 
-export const  ingreso = () => {
-  const emailIngreso = document.getElementById("emailIngreso").value;
-  const contrasenaIngreso = document.getElementById("contrasenaIngreso").value;
+export const login = () => {
+  const emailLogin = document.getElementById("emailLogin").value;
+  const passwordLogin = document.getElementById("passwordLogin").value;
 
-  firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
+  firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -31,7 +31,7 @@ export const  ingreso = () => {
   });
 }
 
-export const observador = () => {
+export const observe = () => {
   firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
       console.log("existe usuario activo")
@@ -50,28 +50,28 @@ export const observador = () => {
         const providerData = user.providerData;
         // ...
       } else {
-      console.log("no existe usuario activo")
+      console.log("user doesnt exist")
       }
   });
 }
-observador();
+observe();
 
 
-export const cerrar = () => {
+export const close = () => {
     firebase.auth().signOut()
     .then(function(){
-        console.log("saliendo...")
+        console.log("loging out...")
     })
     .catch(function(error){
         console.log(error)
     })
 }
 
-export const verificar = () => {
+export const verificate = () => {
     const user = firebase.auth().currentUser;
 
     user.sendEmailVerification().then(function() {
-        console.log("enviando email...");
+        console.log("sending email...");
     }).catch(function(error) {
         console.log(error);
     })
