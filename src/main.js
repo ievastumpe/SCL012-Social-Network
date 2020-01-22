@@ -3,7 +3,39 @@
 import { registrar } from './lib/index.js';
 import { ingreso } from './lib/index.js';
 import { observador } from './lib/index.js';
-import { cerrar } from './lib/index.js';
+import { cerrar } from './lib/index.js';   
+import colegios from './colegios.js';
+import{selectionComunas} from './app.js';
+console.log(colegios)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //averiguar sobre window addevent listener
 
@@ -26,3 +58,4 @@ observador();
 //     <button onclick="cerrar()">Cerrar Sesión</button>
 //     `;
 // }
+//Api//
