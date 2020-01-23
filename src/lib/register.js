@@ -53,7 +53,7 @@ export const templateRegister = (cb) => {
     })
 
     linkLogin.addEventListener('click', () => {
-      const container = document.getElementById('contenido');
+      const container = document.getElementById('content');
       container.innerHTML='';
         templateLogin();
         window.location.hash = '#login';
