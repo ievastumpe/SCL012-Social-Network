@@ -1,37 +1,35 @@
+import { logOut } from "./index.js";
+import { templateRegister } from "./register.js";
+
 export const templateHome = () => {
-  windows.location.hash = '#/home';
-    // creamos div que contendrá la plantilla
+  window.location.hash = '#/home';
     const containerHome = document.createElement('div');
-    // creamos el contenido del login
-    const contentHome = `
-    <header>
-    <div class="frontLogo">
-        <a href="#"><img src="" alt="nameApp" class="logo"></a>
-        <h2>NombreApp</h2>
-        <p>La comunidad de apoderados más grande de Chile</p>
-    </div>
-  </header>
-  <main>
+    const contentHome =
+    `<header>
     <div>
-    <p>¡Hola Mundo!</p>
-
-
+        <a href="#/home">NombreApp</a>
+        <button class="logOutnav" id="logOut">Cerrar Sesión</button>
     </div>
-  </main>
-  `
-    // pasar el contenido al div
-    containerHome.innerHTML = contentHome;
-  
-    // le pido que busque el id del boton dentro del div creado
-    const inputSave = containerHome.querySelector('#inputSave').value;
-    console.log(inputSave);
-    const btn = containerHome.querySelector('#signUp');
-  
-    // evento del botón que llama a la autentificación de google.
-    btn.addEventListener('click', () => {
-        registrar();
-      console.log("boton funciona");
-    return containerHome;
-  })
-  
-  }
+     </header>
+     <hr>
+    <main>
+    <div></div>
+            <div id="selectSchool">
+            <select name="schools" id="stgoSchools">Busca tu colegio</select>
+
+                <div>  
+        </main>
+        <footer>
+        <a id="" class="icono">Hola</a>
+        </footer>  
+    
+        
+        `;
+        containerHome.innerHTML = contentHome;
+        document.getElementById('logOut').addEventListener('click', () => {
+          const container = document.getElementById('content');
+          container.innerHTML='';
+          logOut();
+          templateRegister();
+      })
+    }

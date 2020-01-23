@@ -22,4 +22,4 @@ export const templateLogin = () => {
     });
 }
     
-window.addEventListener("load", showLogin());
+// window.addEventListener("load", templateLogin());

@@ -1,3 +1,5 @@
+import { templateHome } from "./home.js";
+
 // aqui exportaras las funciones que necesites
 
 //Funcion registrar nuevo usuario
@@ -80,7 +82,7 @@ export const observador = () => {
         
         if (emailVerified === true) {
             console.log("sesión on");
-            initFeed();
+            templateHome();
         } else {
       console.log("no existe usuario activo")
         }
@@ -91,7 +93,7 @@ export const observador = () => {
 
 // Función cerrar sesión
 
-export const cerrar = () => {
+export const logOut = () => {
     firebase.auth().signOut()
     .then(function(){
         console.log("saliendo...")
@@ -115,13 +117,13 @@ export const verificar = () => {
 
 //Iniciar cambio de hash
 
-export const initChange= () => {
-    window.addEventListener('load', changeRouter(window.location.hash));
-    // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
-    if ('onhashchange' in window) {
-      window.onhashchange = () => {
-        changeRouter(window.location.hash);
-      }
-    }
+// export const initChange= () => {
+//     window.addEventListener('load', changeRouter(window.location.hash));
+//     // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
+//     if ('onhashchange' in window) {
+//       window.onhashchange = () => {
+//         changeRouter(window.location.hash);
+//       }
+//     }
     
-  }
+//   }

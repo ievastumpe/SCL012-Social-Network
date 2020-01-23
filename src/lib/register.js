@@ -1,5 +1,6 @@
 import { registrar } from './index.js';
 import { googleRegistro } from './index.js';
+import { templateLogin } from './login.js';
 // import { templateLogin } from './login.js';
 
 export const templateRegister = (cb) => {
@@ -53,7 +54,7 @@ export const templateRegister = (cb) => {
     })
 
     linkLogin.addEventListener('click', () => {
-      const container = document.getElementById('contenido');
+      const container = document.getElementById('content');
       container.innerHTML='';
         templateLogin();
         window.location.hash = '#login';
