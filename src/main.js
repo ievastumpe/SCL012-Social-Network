@@ -1,14 +1,13 @@
 
 import { templateRegister } from './lib/register.js';
 import { observador } from './lib/index.js';
+import { templateLogin } from './lib/login.js';
+import { templateHome } from './lib/home.js';
 
-import colegios from './colegios.js';
-import{selectionComunas} from './app.js';
-console.log(colegios)
 
-// Funcion observador que detecta si hay sesión iniciada
-observador();
-
+window.onhashchange = () => {
+  routerHash(window.location.hash);
+}
 
 // Inicializar Firebase
 const init = () => {
@@ -22,12 +21,12 @@ const init = () => {
           appId: "1:871920292627:web:8f2ebda74348e502a400e6"
         });
         // Initialize Firebase
-        templateRegister();
+        window.location.hash = "#/register";
         observador();
-        initChange();
-        console.log('holi')
+        console.log('holi');
   }
-window.addEventListener('load', init);
+  
+init();
 
 
   // const config = {
@@ -61,7 +60,7 @@ const routerHash = (hash) => {
 // Imprimir template del hash correspondiente en el div del html
 export const templateOn = (hash) => {
     const router = hash.substring(2); //pide que lea desde el 2do caracter, se salta el #/
-    const container = document.getElementById('contenido');
+    const container = document.getElementById('content');
     container.innerHTML = ''; //vaciar contenedor para prender el div
  // Coincidir hash con template 
  switch (router) {
@@ -84,17 +83,4 @@ export const templateOn = (hash) => {
   default:
     container.innerHTML = `<h3>Página no encontrada</h3>`
   }
-}
-
-//Iniciar cambio de hash
-const initChange = () => {
-  window.addEventListener('load', routerHash(window.location.hash));
-  // reconoce un cambio en el hash y le pasa ese nuevo hash a routerHash
-  if ('onhashchange' in window) {
-    window.onhashchange = () => {
-      routerHash(window.location.hash);
-    }
-  }
-  
-}
-
+};

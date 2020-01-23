@@ -1,5 +1,6 @@
 import { registrar } from './index.js';
 import { googleRegistro } from './index.js';
+import { templateLogin } from './login.js';
 // import { templateLogin } from './login.js';
 
 export const templateRegister = (cb) => {
