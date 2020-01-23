@@ -43,7 +43,7 @@ export const facebookRegistro = () => {
 
 // Función ingresar usuario ya registrado
 export const ingreso = () => {
-  firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
+  firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -84,7 +84,7 @@ export const observador = () => {
 export const logOut = () => {
     firebase.auth().signOut()
     .then(function(){
-        console.log("saliendo...")
+        console.log("loging out...")
     })
     .catch(function(error){
         console.log(error)
@@ -97,7 +97,7 @@ export const verificar = () => {
     const user = firebase.auth().currentUser;
 
     user.sendEmailVerification().then(function() {
-        console.log("enviando email...");
+        console.log("sending email...");
     }).catch(function(error) {
         console.log(error);
     })

@@ -1,4 +1,3 @@
-// Este es el punto de entrada de tu aplicacion
 
 import { templateRegister } from './lib/register.js';
 import { observador } from './lib/index.js';
