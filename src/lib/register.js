@@ -1,11 +1,13 @@
 import { registrar } from './index.js';
 import { googleRegistro } from './index.js';
 import { templateLogin } from './login.js';
+import { templateHome } from './home.js';
+
 // import { templateLogin } from './login.js';
 
 export const templateRegister = (cb) => {
   console.log('register')
-  window.location.hash = '#/register'
+  window.location.hash = '#register'
   // creamos div que contendrá la plantilla
   const containerRegister = document.createElement('div');
   // creamos el contenido del login
@@ -26,7 +28,8 @@ export const templateRegister = (cb) => {
   <p>Registrate con tu cuenta Google</p>
   <button id="signUpGoogle">Acceder</button>
   <p>¿Ya tienes una cuenta?</p>
-  <a><span id="loginHere">Ingresa acá</span></a>
+  <a id="loginHere" href="#login">Ingresa acá</a><br>
+  <button id="toHome">Home</button>
 </main>
 `
   // pasar el contenido al div
@@ -41,6 +44,7 @@ export const templateRegister = (cb) => {
     const btnSignUp = containerRegister.querySelector('#signUp');
     const btnGoogle = containerRegister.querySelector('#signUpGoogle');
     const linkLogin = containerRegister.querySelector('#loginHere');
+    const btnHome = containerRegister.querySelector('#toHome');
 
     // evento del botón que llama a la función registrar
     btnSignUp.addEventListener('click', () => {
@@ -58,7 +62,15 @@ export const templateRegister = (cb) => {
       container.innerHTML='';
         templateLogin();
         window.location.hash = '#login';
-      console.log("boton login funciona");
+      console.log("boton hacia login funciona");
+    })
+
+    btnHome.addEventListener('click', () => {
+      const container = document.getElementById('content');
+      container.innerHTML='';
+        templateHome();
+        window.location.hash = '#home';
+      console.log("boton hacia home funciona");
     })
 
 

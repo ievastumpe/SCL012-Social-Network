@@ -58,6 +58,19 @@ const routerHash = (hash) => {
   }
 }
 
+// const goBack = () => {
+//   window.history.back();
+//   console.log("going one page back")
+// }
+
+// goBack();
+
+// const goForward = () => {
+//   window.history.forward();
+//   console.log("going one page forward")
+// }
+
+
 // Imprimir template del hash correspondiente en el div del html
 export const templateOn = (hash) => {
     const router = hash.substring(2); //pide que lea desde el 2do caracter, se salta el #/
