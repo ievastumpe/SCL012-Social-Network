@@ -1,5 +1,3 @@
-import { templateHome } from "./home.js";
-
 // aqui exportaras las funciones que necesites
 
 //Funcion registrar nuevo usuario
@@ -18,8 +16,8 @@ export const registrar = (email, contrasena) => {
 };
 
 export const login = () => {
-    const emailLogin = document.getElementById("emailLogin").value;
-    const passwordLogin = document.getElementById("passwordLogin").value;
+    // const emailLogin = document.getElementById("emailLogin").value;
+    // const passwordLogin = document.getElementById("passwordLogin").value;
   
     firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
         .catch(function(error) {
@@ -28,15 +26,8 @@ export const login = () => {
         const errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
-    });
-  }
-// //Botones de registro
-// export const registerBtn = () => {
-//     const email = document.getElementById("email").value;
-//     const contrasena = document.getElementById("contrasena").value;
-
-//     registrar(email, contrasena)
-//   }
+    })
+  };
 
 // Registrarse con Google
 export const googleRegistro = () => {
@@ -52,9 +43,6 @@ export const facebookRegistro = () => {
 
 // Función ingresar usuario ya registrado
 export const ingreso = () => {
-  const emailIngreso = document.getElementById("emailIngreso").value;
-  const contrasenaIngreso = document.getElementById("contrasenaIngreso").value;
-
   firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
       // Handle Errors here.
