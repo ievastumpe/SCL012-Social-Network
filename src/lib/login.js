@@ -1,14 +1,10 @@
-import { login } from './lib/index.js';
+import { login } from './index.js';
 
-export const showLogin = () => {
+export const templateLogin = () => {
     console.log("holaaaaa")
+    window.location.hash = '#/login'
     const containerCreate = document.createElement('div');
-    const contentCreate = `
-    <div>
-        <img src="/img/logo_test.png" class="logo">
-    </div>
-    <div descripcionAbajoLogo> La Red Social de La Comunidad de apoderados de Chile</descripcionAbajoLogo>
-    <p> Login en tu Cuenta </p>
+    const contentCreate = `<p> Login en tu Cuenta </p>
         <form>
         <input type="email" name="" id="emailLogin" placeholder="Ingresa tu email" class="input" required>
         <input type="password" name="" id="passwordLogin" placeholder="Ingresa tu contraseña" class="input" required>

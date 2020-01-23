@@ -1,10 +1,8 @@
 // aqui exportaras las funciones que necesites
 
-export const register = () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("contrasena").value;
-
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+//Funcion registrar nuevo usuario
+export const registrar = (email, contrasena) => {
+  firebase.auth().createUserWithEmailAndPassword(email, contrasena)
   .then(function(){
       verificar()
   })    
@@ -14,12 +12,46 @@ export const register = () => {
       const errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
-  });
-}
+  })
+};
 
 export const login = () => {
-  const emailLogin = document.getElementById("emailLogin").value;
-  const passwordLogin = document.getElementById("passwordLogin").value;
+    const emailLogin = document.getElementById("emailLogin").value;
+    const passwordLogin = document.getElementById("passwordLogin").value;
+  
+    firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
+        .catch(function(error) {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+    });
+  }
+// //Botones de registro
+// export const registerBtn = () => {
+//     const email = document.getElementById("email").value;
+//     const contrasena = document.getElementById("contrasena").value;
+
+//     registrar(email, contrasena)
+//   }
+
+// Registrarse con Google
+export const googleRegistro = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+}
+
+// Registrarse con Facebook
+export const facebookRegistro = () => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+}
+
+// Función ingresar usuario ya registrado
+export const ingreso = () => {
+  const emailIngreso = document.getElementById("emailIngreso").value;
+  const contrasenaIngreso = document.getElementById("contrasenaIngreso").value;
 
   firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
@@ -28,36 +60,38 @@ export const login = () => {
       const errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
-  });
-}
+  })
+};
 
-export const observe = () => {
-  firebase.auth().onAuthStateChanged(function(user) {
+// Funcion observador para ver si hay cuenta activa
+
+export const observador = () => {
+      firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
       console.log("existe usuario activo")
-    //   aparece()
+
         const displayName = user.displayName;
         const email = user.email;
-        
-        console.log('***********');
-        console.log(user.emailVerified);
-        console.log('**********');
-
         const emailVerified = user.emailVerified;
         const photoURL = user.photoURL;
         const isAnonymous = user.isAnonymous;
         const uid = user.uid;
         const providerData = user.providerData;
-        // ...
-      } else {
-      console.log("user doesnt exist")
-      }
-  });
+        
+        if (emailVerified === true) {
+            console.log("sesión on");
+            initFeed();
+        } else {
+      console.log("no existe usuario activo")
+        }
+    }
+   })
 }
-observe();
 
 
-export const close = () => {
+// Función cerrar sesión
+
+export const cerrar = () => {
     firebase.auth().signOut()
     .then(function(){
         console.log("loging out...")
@@ -67,7 +101,9 @@ export const close = () => {
     })
 }
 
-export const verificate = () => {
+//Función para mandar email a usuario y verificar cuenta
+
+export const verificar = () => {
     const user = firebase.auth().currentUser;
 
     user.sendEmailVerification().then(function() {
@@ -76,3 +112,16 @@ export const verificate = () => {
         console.log(error);
     })
 }
+
+//Iniciar cambio de hash
+
+export const initChange= () => {
+    window.addEventListener('load', changeRouter(window.location.hash));
+    // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
+    if ('onhashchange' in window) {
+      window.onhashchange = () => {
+        changeRouter(window.location.hash);
+      }
+    }
+    
+  }
