@@ -55,7 +55,7 @@ export const facebookRegistro = () => {
 
 // Función ingresar usuario ya registrado
 export const ingreso = () => {
-  firebase.auth().signInWithEmailAndPassword(emailIngreso, contrasenaIngreso)
+  firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -97,7 +97,7 @@ export const observador = () => {
 export const logOut = () => {
     firebase.auth().signOut()
     .then(function(){
-        console.log("saliendo...")
+        console.log("loging out...")
     })
     .catch(function(error){
         console.log(error)
@@ -105,8 +105,6 @@ export const logOut = () => {
 }
 
 //Función para mandar email a usuario y verificar cuenta
-
-
 
 //Iniciar cambio de hash
 
