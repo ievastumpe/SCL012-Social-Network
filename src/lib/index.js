@@ -1,5 +1,6 @@
 // aqui exportaras las funciones que necesites
 
+
 //Funcion registrar nuevo usuario
 export const registrar = (email, contrasena) => {
   firebase.auth().createUserWithEmailAndPassword(email, contrasena)
@@ -13,21 +14,32 @@ export const registrar = (email, contrasena) => {
       console.log(errorCode);
       console.log(errorMessage);
   })
+  const user = firebase.auth().currentUser;
+
+  user.sendEmailVerification().then(function() {
+      console.log("enviando email...");
+  }).catch(function(error) {
+      console.log(error);
+  })
 };
 
-export const login = () => {
-    // const emailLogin = document.getElementById("emailLogin").value;
-    // const passwordLogin = document.getElementById("passwordLogin").value;
+// export const verificar = () => {
+   
+// }
+
+// export const login = () => {
+//     // const emailLogin = document.getElementById("emailLogin").value;
+//     // const passwordLogin = document.getElementById("passwordLogin").value;
   
-    firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
-        .catch(function(error) {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-    })
-  };
+//     firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
+//         .catch(function(error) {
+//         // Handle Errors here.
+//         const errorCode = error.code;
+//         const errorMessage = error.message;
+//         console.log(errorCode);
+//         console.log(errorMessage);
+//     })
+//   };
 
 // Registrarse con Google
 export const googleRegistro = () => {
@@ -51,6 +63,7 @@ export const ingreso = () => {
       console.log(errorCode);
       console.log(errorMessage);
   })
+
 };
 
 // Funcion observador para ver si hay cuenta activa
@@ -93,15 +106,7 @@ export const logOut = () => {
 
 //Función para mandar email a usuario y verificar cuenta
 
-export const verificar = () => {
-    const user = firebase.auth().currentUser;
 
-    user.sendEmailVerification().then(function() {
-        console.log("enviando email...");
-    }).catch(function(error) {
-        console.log(error);
-    })
-}
 
 //Iniciar cambio de hash
 

@@ -2,6 +2,7 @@ import { registrar } from './index.js';
 import { googleRegistro } from './index.js';
 import { templateLogin } from './login.js';
 import { templateHome } from './home.js';
+// import { verificar } from './index.js';
 
 // import { templateLogin } from './login.js';
 
@@ -49,6 +50,7 @@ export const templateRegister = (cb) => {
     // evento del botón que llama a la función registrar
     btnSignUp.addEventListener('click', () => {
       registrar(emailSave, passwordSave);
+      // verificar()
       console.log("boton funciona");
     })
 

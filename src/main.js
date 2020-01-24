@@ -29,22 +29,7 @@ const init = () => {
   
 init();
 
-
-  // const config = {
-  //   apiKey: "AIzaSyA866dHzLXbsfmKkNn69rj4ZrVxCLnfEb0",
-  //   authDomain: "red-social-lab20.firebaseapp.com",
-  //   databaseURL: "https://red-social-lab20.firebaseio.com",
-  //   projectId: "red-social-lab20",
-  //   storageBucket: "red-social-lab20.appspot.com",
-  //   messagingSenderId: "871920292627",
-  //   appId: "1:871920292627:web:8f2ebda74348e502a400e6"
-  // }
-  // firebase.initializeApp(config)
-
-
-
-
-//Carga el template del hash correspondiente
+// Carga el template del hash correspondiente
 const routerHash = (hash) => {
   if(hash === ''){ //hash por defecto muestra home
     return templateOn('#/home');
