@@ -9,11 +9,11 @@ window.onhashchange = () => {
   routerHash(window.location.hash);
 }
 
-console.log('holi')
+console.log('windowsHash working')
 
 // Inicializar Firebase
 const init = () => {
-  console.log('holi')
+  console.log('init working')
           firebase.initializeApp({
           apiKey: "AIzaSyA866dHzLXbsfmKkNn69rj4ZrVxCLnfEb0",
           authDomain: "red-social-lab20.firebaseapp.com",
@@ -24,10 +24,10 @@ const init = () => {
           appId: "1:871920292627:web:8f2ebda74348e502a400e6"
         });
         // Initialize Firebase
-        console.log('holi')
+        console.log('hash register working')
         window.location.hash = "#/register";
         observador();
-        console.log('holi');
+        console.log('observador working');
   }
   
 init();
@@ -57,7 +57,9 @@ const routerHash = (hash) => {
   }
   if (hash === '#/register') {
     return templateOn(hash);
-    
+  }
+  if (hash === '#/login') {
+    return templateOn(hash);
   }
 }
 
@@ -91,8 +93,11 @@ export const templateOn = (hash) => {
         )
   break;
   case 'login':
-    container.appendChild(templateLogin());
-  break;
+    templateLogin(
+      (retContainer) => 
+        container.appendChild(retContainer)
+        )
+    break;
   // case 'login'/'feedcolegios'/'colegioProfile'/'userProfile'/'forum'
   //   containerRoot.appendChild(templateLogIn());
   // break;

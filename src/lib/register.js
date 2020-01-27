@@ -1,4 +1,5 @@
-import { registrar } from '/lib/index.js';
+import { register } from '/lib/index.js';
+import { verificar } from '/lib/index.js';
 import { googleRegistro } from '/lib/index.js';
 import { templateLogin } from '/lib/login.js';
 import { templateHome } from '/lib/home.js';
@@ -6,7 +7,7 @@ import { templateHome } from '/lib/home.js';
 // import { templateLogin } from './login.js';
 
 export const templateRegister = (cb) => {
-  console.log('register')
+
   window.location.hash = '#register'
   // creamos div que contendrá la plantilla
   const containerRegister = document.createElement('div');
@@ -21,8 +22,8 @@ export const templateRegister = (cb) => {
 <main>
   <div>
   <h4>Crea tu cuenta</h4>
-  <input id="emailSave" type="email" id="email" placeholder="Ingresa tu mail" required="required">
-  <input id="passwordSave" type="password" id="password" placeholder="Ingresa una contraseña" required="required"><br>
+  <input id="emailSave" type="email" placeholder="Ingresa tu mail" required="required">
+  <input id="passwordSave" type="password" placeholder="Ingresa una contraseña" required="required"><br>
   <input id="olderSave" type="checkbox" required="required">Confirmo que soy mayor de edad<br>
   <button id="signUp">Crear cuenta</button><br>
   <p>Registrate con tu cuenta Google</p>
@@ -37,6 +38,7 @@ export const templateRegister = (cb) => {
 
   setTimeout(() => {
     // le pido que busque el id del boton y class del input dentro del div creado
+    console.log("set timeout woring");
     const emailSave = containerRegister.querySelector('#emailSave').value;
     console.log(emailSave);
     const passwordSave = containerRegister.querySelector('#passwordSave').value;
@@ -48,8 +50,9 @@ export const templateRegister = (cb) => {
 
     // evento del botón que llama a la función registrar
     btnSignUp.addEventListener('click', () => {
-      registrar(emailSave, passwordSave);
-      console.log("boton funciona");
+      register(emailSave, passwordSave);
+      verificar;
+      console.log("SignUp boton funciona");
     })
 
     btnGoogle.addEventListener('click', () => {
@@ -75,5 +78,6 @@ export const templateRegister = (cb) => {
 
 
     cb(containerRegister);
+    
   }, 0);
 }

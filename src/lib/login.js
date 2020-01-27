@@ -1,29 +1,26 @@
-import { ingreso } from '/lib/index.js';
-import { templateHome } from '/lib/home.js';
+import { login } from '/lib/index.js';
+//import { templateHome } from '/lib/home.js';
 
 export const templateLogin = () => {
-    console.log("holaaaaa")
     window.location.hash = '#login'
-    const containerCreate = document.createElement('div');
-    const contentCreate = `<p> Login en tu Cuenta </p>
+    const containerLogin = document.createElement('div');
+    const contentLogin = `<p> Login en tu Cuenta </p>
         <form>
         <input type="email" id="emailLogin" placeholder="Ingresa tu email" class="input" required>
         <input type="password" id="passwordLogin" placeholder="Ingresa tu contraseña" class="input" required>
-        <button id="enterLogin" class="btn">Acceder</button>
+        <button id="btnLogin" class="btn">Acceder</button>
         </form>`;
-    containerCreate.innerHTML = contentCreate;
-    document.getElementById("content").innerHTML = contentCreate;
+    containerLogin.innerHTML = contentLogin;
+    document.getElementById("content").innerHTML = contentLogin;
 
-    const emailLogin = containerCreate.querySelector('#emailLogin').value;
-    const passwordLogin = containerCreate.querySelector('#passwordLogin').value;
+    const emailLogin = containerLogin.querySelector('#emailLogin').value;
+    const passwordLogin = containerLogin.querySelector('#passwordLogin').value;
 
-    const enterLogin = containerCreate.querySelector('#enterLogin');
+    const btnLogin = containerLogin.querySelector('#btnLogin');
 
-    enterLogin.addEventListener('click', () => {
+    btnLogin.addEventListener('click', () => {
       const container = document.getElementById('content');
       container.innerHTML='';
-      ingreso(emailLogin, passwordLogin);
-      templateHome();
-      window.location.hash = '#home';
-    })
+      login(emailLogin, passwordLogin);
+      })
 };

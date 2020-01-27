@@ -1,24 +1,28 @@
 // aqui exportaras las funciones que necesites
 
 //Funcion registrar nuevo usuario
-export const registrar = (email, contrasena) => {
-  firebase.auth().createUserWithEmailAndPassword(email, contrasena)
-  .then(function(){
-      verificar()
-  })    
-  .catch(function(error) {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-  })
+export const register = () => {
+    firebase.auth().createUserWithEmailAndPassword(emailSave, passwordSave).
+    catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);
+});
 };
 
+export const verificar = () => {
+    const user = firebase.auth().currentUser;
+
+    user.sendEmailVerification().then(function() {
+        console.log("sending email...");
+    }).catch(function(error) {
+        console.log(error);
+    })
+}
+
+
 export const login = () => {
-    // const emailLogin = document.getElementById("emailLogin").value;
-    // const passwordLogin = document.getElementById("passwordLogin").value;
-  
     firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
         .catch(function(error) {
         // Handle Errors here.
@@ -26,6 +30,7 @@ export const login = () => {
         const errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
+        window.location.hash = '#home';
     })
   };
 
@@ -93,15 +98,6 @@ export const logOut = () => {
 
 //Función para mandar email a usuario y verificar cuenta
 
-export const verificar = () => {
-    const user = firebase.auth().currentUser;
-
-    user.sendEmailVerification().then(function() {
-        console.log("sending email...");
-    }).catch(function(error) {
-        console.log(error);
-    })
-}
 
 //Iniciar cambio de hash
 
