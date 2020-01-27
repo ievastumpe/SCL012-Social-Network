@@ -42,6 +42,16 @@ init();
 
 
 
+<<<<<<< HEAD
+// function aparece(){
+//     const contenido = document.getElementById("contenido");
+//     contenido.innerHTML = `
+//     <p>Bienvenido!</p>
+//     <button onclick="cerrar()">Cerrar Sesión</button>
+//     `;
+// }
+//Api//
+=======
 
 //Carga el template del hash correspondiente
 const routerHash = (hash) => {
@@ -97,3 +107,4 @@ export const templateOn = (hash) => {
     container.innerHTML = `<h3>Página no encontrada</h3>`
   }
 };
+>>>>>>> e1d090444166ba33e5a715ea6a3600e026d98482
