@@ -1,3 +1,64 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+[debug] [2020-01-17T13:00:36.139Z] ----------------------------------------------------------------------
+[debug] [2020-01-17T13:00:36.236Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-17T13:00:36.236Z] CLI Version:   7.12.1
+[debug] [2020-01-17T13:00:36.236Z] Platform:      darwin
+[debug] [2020-01-17T13:00:36.236Z] Node Version:  v12.12.0
+[debug] [2020-01-17T13:00:37.076Z] Time:          Fri Jan 17 2020 10:00:36 GMT-0300 (GMT-03:00)
+[debug] [2020-01-17T13:00:37.076Z] ----------------------------------------------------------------------
+[debug] [2020-01-17T13:00:37.076Z] 
+[debug] [2020-01-17T13:00:37.491Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-17T13:00:37.492Z] > authorizing via signed-in user
+[debug] [2020-01-17T13:00:37.492Z] [iam] checking project red-social-lab20 for permissions ["firebase.projects.get"]
+[debug] [2020-01-17T13:00:37.494Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-lab20:testIamPermissions  
+
+[debug] [2020-01-17T13:00:41.657Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-17T13:00:41.777Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20  
+ 
+[debug] [2020-01-17T13:00:42.325Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Sol/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-17T13:00:42.360Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20/webApps/-/config  
+ 
+[debug] [2020-01-17T13:00:42.939Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+=======
+[debug] [2020-01-20T12:15:07.446Z] ----------------------------------------------------------------------
+[debug] [2020-01-20T12:15:07.449Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\katsm\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-20T12:15:07.449Z] CLI Version:   7.12.1
+[debug] [2020-01-20T12:15:07.449Z] Platform:      win32
+[debug] [2020-01-20T12:15:07.449Z] Node Version:  v13.5.0
+[debug] [2020-01-20T12:15:07.450Z] Time:          Mon Jan 20 2020 09:15:07 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-20T12:15:07.450Z] ----------------------------------------------------------------------
+[debug] [2020-01-20T12:15:07.450Z] 
+[debug] [2020-01-20T12:15:07.528Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-20T12:15:07.529Z] > authorizing via signed-in user
+[debug] [2020-01-20T12:15:07.529Z] [iam] checking project red-social-lab20 for permissions ["firebase.projects.get"]
+[debug] [2020-01-20T12:15:07.532Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-20T12:15:07.532Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-20T12:15:07.756Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-20T12:15:07.799Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-lab20:testIamPermissions  
+=======
+[debug] [2020-01-22T19:32:40.605Z] ----------------------------------------------------------------------
+[debug] [2020-01-22T19:32:40.612Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\katsm\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-22T19:32:40.612Z] CLI Version:   7.12.1
+[debug] [2020-01-22T19:32:40.613Z] Platform:      win32
+[debug] [2020-01-22T19:32:40.613Z] Node Version:  v13.5.0
+[debug] [2020-01-22T19:32:40.614Z] Time:          Wed Jan 22 2020 16:32:40 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-22T19:32:40.615Z] ----------------------------------------------------------------------
+[debug] [2020-01-22T19:32:40.615Z] 
+[debug] [2020-01-22T19:32:41.027Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-22T19:32:41.028Z] > authorizing via signed-in user
+[debug] [2020-01-22T19:32:41.029Z] [iam] checking project red-social-lab20 for permissions ["firebase.projects.get"]
+[debug] [2020-01-22T19:32:41.031Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-lab20:testIamPermissions  
+>>>>>>> e1d090444166ba33e5a715ea6a3600e026d98482
+>>>>>>> 8e610768e3d5e1e062e03341fe2f2d7f27010be6
 
 [debug] [2020-01-24T12:53:48.005Z] ----------------------------------------------------------------------
 [debug] [2020-01-24T12:53:48.018Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
@@ -26,5 +87,68 @@
 [debug] [2020-01-24T12:53:49.822Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20/webApps/-/config  
  
 [debug] [2020-01-24T12:53:50.354Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+<<<<<<< HEAD
+[info] ✔  hosting: Local server: http://localhost:5000
+=======
+[info] +  hosting: Local server: http://localhost:5000
+<<<<<<< HEAD
+[debug] [2020-01-21T12:07:08.257Z] ----------------------------------------------------------------------
+[debug] [2020-01-21T12:07:08.259Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\katsm\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-21T12:07:08.260Z] CLI Version:   7.12.1
+[debug] [2020-01-21T12:07:08.260Z] Platform:      win32
+[debug] [2020-01-21T12:07:08.260Z] Node Version:  v13.5.0
+[debug] [2020-01-21T12:07:08.261Z] Time:          Tue Jan 21 2020 09:07:08 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-21T12:07:08.261Z] ----------------------------------------------------------------------
+[debug] [2020-01-21T12:07:08.261Z] 
+[debug] [2020-01-21T12:07:08.273Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-21T12:07:08.274Z] > authorizing via signed-in user
+[debug] [2020-01-21T12:07:08.275Z] [iam] checking project red-social-lab20 for permissions ["firebase.projects.get"]
+[debug] [2020-01-21T12:07:08.277Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-lab20:testIamPermissions  
+
+[debug] [2020-01-21T12:07:09.426Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-21T12:07:09.428Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20  
+ 
+[debug] [2020-01-21T12:07:10.033Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\katsm\OneDrive\Escritorio\LABORATORIA\LABORATORIA\SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-21T12:07:10.038Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20/webApps/-/config  
+ 
+[debug] [2020-01-21T12:07:11.333Z] <<< HTTP RESPONSE 200
+[warn] !  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5005
+>>>>>>> d71ada95140699ad7a6167617f6ba7384036fbb4
+=======
+>>>>>>> e1d090444166ba33e5a715ea6a3600e026d98482
+>>>>>>> 8e610768e3d5e1e062e03341fe2f2d7f27010be6
+[debug] [2020-01-27T13:25:06.515Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T13:25:06.521Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-27T13:25:06.521Z] CLI Version:   7.12.1
+[debug] [2020-01-27T13:25:06.521Z] Platform:      darwin
+[debug] [2020-01-27T13:25:06.521Z] Node Version:  v13.0.1
+[debug] [2020-01-27T13:25:06.538Z] Time:          Mon Jan 27 2020 10:25:06 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-27T13:25:06.538Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T13:25:06.538Z] 
+[debug] [2020-01-27T13:25:06.567Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-27T13:25:06.567Z] > authorizing via signed-in user
+[debug] [2020-01-27T13:25:06.568Z] [iam] checking project red-social-lab20 for permissions ["firebase.projects.get"]
+[debug] [2020-01-27T13:25:06.570Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-27T13:25:06.570Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-27T13:25:06.720Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T13:25:06.739Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/red-social-lab20:testIamPermissions  
+
+[debug] [2020-01-27T13:25:07.813Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T13:25:07.814Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20  
+ 
+[debug] [2020-01-27T13:25:09.054Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ievastumpe/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-27T13:25:09.058Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/red-social-lab20/webApps/-/config  
+ 
+[debug] [2020-01-27T13:25:10.348Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
