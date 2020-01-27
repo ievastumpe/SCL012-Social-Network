@@ -433,6 +433,7 @@ export default
   "alive": true,
   "image" :""
 
+<<<<<<< HEAD
 },
 {
   "name": "Colegio Echaurren",
@@ -502,5 +503,8 @@ export default
 
 
 
+=======
+}
+>>>>>>> e1d090444166ba33e5a715ea6a3600e026d98482
 
 ]
