@@ -1,16 +1,19 @@
 
-import { templateRegister } from './lib/register.js';
-import { observador } from './lib/index.js';
-import { templateLogin } from './lib/login.js';
-import { templateHome } from './lib/home.js';
+import { templateRegister } from '/lib/register.js';
+import { observador } from '/lib/index.js';
+import { templateLogin } from '/lib/login.js';
+import { templateHome } from '/lib/home.js';
 
 
 window.onhashchange = () => {
   routerHash(window.location.hash);
 }
 
+console.log('holi')
+
 // Inicializar Firebase
 const init = () => {
+  console.log('holi')
           firebase.initializeApp({
           apiKey: "AIzaSyA866dHzLXbsfmKkNn69rj4ZrVxCLnfEb0",
           authDomain: "red-social-lab20.firebaseapp.com",
@@ -21,6 +24,7 @@ const init = () => {
           appId: "1:871920292627:web:8f2ebda74348e502a400e6"
         });
         // Initialize Firebase
+        console.log('holi')
         window.location.hash = "#/register";
         observador();
         console.log('holi');

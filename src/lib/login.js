@@ -1,5 +1,5 @@
-import { ingreso } from './index.js';
-import { templateHome } from './home.js';
+import { ingreso } from '/lib/index.js';
+import { templateHome } from '/lib/home.js';
 
 export const templateLogin = () => {
     console.log("holaaaaa")

@@ -1,7 +1,7 @@
-import { registrar } from './index.js';
-import { googleRegistro } from './index.js';
-import { templateLogin } from './login.js';
-import { templateHome } from './home.js';
+import { registrar } from '/lib/index.js';
+import { googleRegistro } from '/lib/index.js';
+import { templateLogin } from '/lib/login.js';
+import { templateHome } from '/lib/home.js';
 
 // import { templateLogin } from './login.js';
 
