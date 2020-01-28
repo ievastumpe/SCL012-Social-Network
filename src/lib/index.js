@@ -1,11 +1,25 @@
 // aqui exportaras las funciones que necesites
 
+  const verify = () => {
+    const user = firebase.auth().currentUser;
+  
+    user.sendEmailVerification()
+      .then(() => {
+        // Email sent.
+        console.log('Enviando correo...');
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error);
+      });
+  };
+
 
 //Funcion registrar nuevo usuario
 export const registrar = (email, contrasena) => {
   firebase.auth().createUserWithEmailAndPassword(email, contrasena)
   .then(function(){
-      verificar()
+      verify()
   })    
   .catch(function(error) {
       // Handle Errors here.
@@ -14,32 +28,23 @@ export const registrar = (email, contrasena) => {
       console.log(errorCode);
       console.log(errorMessage);
   })
-  const user = firebase.auth().currentUser;
 
-  user.sendEmailVerification().then(function() {
-      console.log("enviando email...");
-  }).catch(function(error) {
-      console.log(error);
-  })
 };
 
-// export const verificar = () => {
-   
-// }
 
-// export const login = () => {
-//     // const emailLogin = document.getElementById("emailLogin").value;
-//     // const passwordLogin = document.getElementById("passwordLogin").value;
+export const login = () => {
+    // const emailLogin = document.getElementById("emailLogin").value;
+    // const passwordLogin = document.getElementById("passwordLogin").value;
   
-//     firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
-//         .catch(function(error) {
-//         // Handle Errors here.
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//         console.log(errorCode);
-//         console.log(errorMessage);
-//     })
-//   };
+    firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
+        .catch(function(error) {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+    })
+  };
 
 // Registrarse con Google
 export const googleRegistro = () => {

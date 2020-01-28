@@ -4,11 +4,21 @@
     const containerHome = document.createElement('div');
     const contentHome =
     `<header>
-    <div><a href="#/home">NombreApp</a>
-        <button class="logOutnav" id="logOut">Cerrar Sesión</button>
+    <div>
+    <img class="apiLogoStyle" src="img/fontApoderapi.png" alt="apoderapiLogo">
+    </div>
+    <div class="nav">
+    <ul>
+    <li><a href="#"><img src="img/menu.png" alt="menu-icon"></a></li>
+    <li><a class="active" href="#home"><img src="img/home.png" alt="home-icon"></a></li>
+    <li><a href="#profile"><img src="img/user.png" alt="user-icon"></a></li>
+    <li><a href="#favorites"><img src="img/like.png" alt="user-icon"></a></li>
+    <li><a href="#forum"><img src="img/megaphone.png" alt="forum-icon"></a></li>
+    <li><a href="#logout"><img id="logOut" src="img/exit.png" alt="logout-icon"></a></li>
+    </ul>
     </div>
      </header>
-    <main>
+    <main class="stgoView">
     <div id="selectSchool">
     <p>¿Dónde quieres buscar colegio?</p>
     <select name="" id="">
@@ -28,7 +38,7 @@
     <option value="las Condes">Las Condes</option>
     <option value="loBarnechea">Lo Barnechea</option>
     </select>
-    <div>  
+    </div>  
     </main>
     <footer>
     <h4>Todos los derechos reservados</h4>
