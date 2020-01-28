@@ -116,8 +116,19 @@
       }
 
       .stgoView {
-        background-image: url(https://6erxg60qvo1qvjha44jrgpan-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/santiago-chile.jpg);
-        
+        background-color: #F57C00;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        margin: 45px;
+        width: 70%;
+        height: 150px;
+        left: 86px;
+        top: 171px;
+        padding: 10px;
+      }
+
+      #selectSchool p {
+          color: white;
       }
 
     

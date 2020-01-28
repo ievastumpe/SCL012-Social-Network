@@ -1,4 +1,4 @@
-import { registrar } from './index.js';
+import { register } from './index.js';
 import { googleRegistro } from './index.js';
 import { templateLogin } from './login.js';
 import { templateHome } from './home.js';
@@ -11,7 +11,7 @@ export const templateRegister = (cb) => {
   window.location.hash = '#register'
   // creamos div que contendrá la plantilla
   const containerRegister = document.createElement('div');
-  containerRegister.setAttribute('class','registerStyle');
+  containerRegister.setAttribute('class', 'registerStyle');
   // creamos el contenido del login
   const contentRegister = `
   <header>
@@ -22,8 +22,8 @@ export const templateRegister = (cb) => {
   <main>
   <div class="register-box">
   <h3 class="titleForm">Crea tu cuenta</h3>
-  <input class="inputForm" id="emailSave" type="email" id="email" placeholder="Ingresa tu mail" required="required"><br>
-  <input class="inputForm" id="passwordSave" type="password" id="password" placeholder="Ingresa una contraseña" required="required"><br>
+  <input class="inputForm" id="emailSave" type="email" placeholder="Ingresa tu mail" required><br>
+  <input class="inputForm" id="passwordSave" type="password" placeholder="Ingresa una contraseña" required><br>
   <button class="btnFormStyle" id="signUp">Registrarse</button><br>
   </div>
   <p>Regístrate con tu cuenta Google</p>
@@ -38,10 +38,6 @@ export const templateRegister = (cb) => {
 
   setTimeout(() => {
     // le pido que busque el id del boton y class del input dentro del div creado
-    const emailSave = containerRegister.querySelector('#emailSave').value;
-    console.log(emailSave);
-    const passwordSave = containerRegister.querySelector('#passwordSave').value;
-    console.log(passwordSave);
     const btnSignUp = containerRegister.querySelector('#signUp');
     const btnGoogle = containerRegister.querySelector('#signUpGoogle');
     const linkLogin = containerRegister.querySelector('#loginHere');
@@ -49,9 +45,13 @@ export const templateRegister = (cb) => {
 
     // evento del botón que llama a la función registrar
     btnSignUp.addEventListener('click', () => {
-      registrar(emailSave, passwordSave);
+      const email = containerRegister.querySelector('#emailSave').value;
+      console.log(email);
+      const password = containerRegister.querySelector('#passwordSave').value;
+      console.log(password);
+      register(email, password);
       // verificar()
-      console.log("boton funciona");
+      console.log("boton reg funciona");
     })
 
     btnGoogle.addEventListener('click', () => {
@@ -61,17 +61,17 @@ export const templateRegister = (cb) => {
 
     linkLogin.addEventListener('click', () => {
       const container = document.getElementById('content');
-      container.innerHTML='';
-        templateLogin();
-        window.location.hash = '#login';
+      container.innerHTML = '';
+      templateLogin();
+      window.location.hash = '#login';
       console.log("boton hacia login funciona");
     })
 
     btnHome.addEventListener('click', () => {
       const container = document.getElementById('content');
-      container.innerHTML='';
-        templateHome();
-        window.location.hash = '#home';
+      container.innerHTML = '';
+      templateHome();
+      window.location.hash = '#home';
       console.log("boton hacia home funciona");
     })
 

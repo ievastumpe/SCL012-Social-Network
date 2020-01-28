@@ -1,4 +1,4 @@
-import { ingreso } from './index.js';
+import { login } from './index.js';
 import { templateHome } from './home.js';
 import { templateRegister } from './register.js';
 
@@ -45,7 +45,7 @@ export const templateLogin = () => {
     enterLogin.addEventListener('click', () => {
       const container = document.getElementById('content');
       container.innerHTML='';
-      ingreso(emailLogin, passwordLogin);
+      login(emailLogin, passwordLogin);
       templateHome();
       window.location.hash = '#home';
     })

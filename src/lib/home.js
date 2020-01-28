@@ -10,11 +10,11 @@
     <div class="nav">
     <ul>
     <li><a href="#"><img src="img/menu.png" alt="menu-icon"></a></li>
-    <li><a class="active" href="#home"><img src="img/home.png" alt="home-icon"></a></li>
+    <li><a class="active" href="#home"><img id="toHome" src="img/home.png" alt="home-icon"></a></li>
     <li><a href="#profile"><img src="img/user.png" alt="user-icon"></a></li>
     <li><a href="#favorites"><img src="img/like.png" alt="user-icon"></a></li>
     <li><a href="#forum"><img src="img/megaphone.png" alt="forum-icon"></a></li>
-    <li><a href="#logout"><img id="logOut" src="img/exit.png" alt="logout-icon"></a></li>
+    <li><a href="#logout"><img id="logOut" src="img/exit.png" id="toLogout" alt="logout-icon"></a></li>
     </ul>
     </div>
      </header>
@@ -45,6 +45,16 @@
     </footer>`;
     containerHome.innerHTML = contentHome;
     document.getElementById("content").innerHTML = contentHome;
+
+    const goToHome = containerHome.querySelector('#toHome');
+    const goToLogout = containerHome.querySelector('#toLogout');
+
+    goToHome.addEventListener('click', () => {
+      googleRegistro();
+      console.log("boton google funciona");
+    })
+
+
         // document.getElementById('logOut').addEventListener('click', () => {
         //   const container = document.getElementById('content');
         //   container.innerHTML='';

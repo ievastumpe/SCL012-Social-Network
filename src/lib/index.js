@@ -1,5 +1,6 @@
 // aqui exportaras las funciones que necesites
-
+import { templateHome } from './home.js';
+// Enviar correo de verificacion de cuenta 
   const verify = () => {
     const user = firebase.auth().currentUser;
   
@@ -7,6 +8,7 @@
       .then(() => {
         // Email sent.
         console.log('Enviando correo...');
+        alert('Hemos enviado un correo de verificación de cuenta');
       })
       .catch((error) => {
         // An error happened.
@@ -16,8 +18,8 @@
 
 
 //Funcion registrar nuevo usuario
-export const registrar = (email, contrasena) => {
-  firebase.auth().createUserWithEmailAndPassword(email, contrasena)
+export const register = (email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function(){
       verify()
   })    
@@ -31,25 +33,11 @@ export const registrar = (email, contrasena) => {
 
 };
 
-
-export const login = () => {
-    // const emailLogin = document.getElementById("emailLogin").value;
-    // const passwordLogin = document.getElementById("passwordLogin").value;
-  
-    firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
-        .catch(function(error) {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-    })
-  };
-
 // Registrarse con Google
 export const googleRegistro = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
+    templateHome();
 }
 
 // Registrarse con Facebook
@@ -59,7 +47,7 @@ export const facebookRegistro = () => {
 }
 
 // Función ingresar usuario ya registrado
-export const ingreso = () => {
+export const login = () => {
   firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
       // Handle Errors here.
@@ -90,7 +78,7 @@ export const observador = () => {
             console.log("sesión on");
             templateHome();
         } else {
-      console.log("no existe usuario activo")
+      console.log("usuario no verificado")
         }
     }
    })
@@ -108,18 +96,3 @@ export const logOut = () => {
         console.log(error)
     })
 }
-
-//Función para mandar email a usuario y verificar cuenta
-
-//Iniciar cambio de hash
-
-// export const initChange= () => {
-//     window.addEventListener('load', changeRouter(window.location.hash));
-//     // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
-//     if ('onhashchange' in window) {
-//       window.onhashchange = () => {
-//         changeRouter(window.location.hash);
-//       }
-//     }
-    
-//   }
