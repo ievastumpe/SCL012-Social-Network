@@ -51,17 +51,21 @@ init();
 const routerHash = (hash) => {
   if(hash === ''){ //hash por defecto muestra home
     return templateOn('#/home');
-  }
-  if (hash === '#/home') {
+  } 
+  else if (hash === '#/home') {
     return templateOn(hash);
-  }
-  if (hash === '#/register') {
-    return templateOn(hash);
-  }
-  if (hash === '#/login') {
-    return templateOn(hash);
-  }
-}
+  } 
+  else if (hash === '#/register') {
+    return templateRegister(hash);
+  } 
+  else if (hash === '#/login') {
+    return templateLogin(hash);
+  } //else if (hash === '#/forum') {
+    //return templateForum(hash);
+  //} else if (hash === '#/profile') {
+    //return templateProfile(hash);
+  //}
+};
 
 // const goBack = () => {
 //   window.history.back();

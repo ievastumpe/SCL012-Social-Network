@@ -1,3 +1,5 @@
+import {afterLogIn} from /lib/register.js;
+
 // aqui exportaras las funciones que necesites
 
 //Funcion registrar nuevo usuario
@@ -19,7 +21,7 @@ export const verificar = () => {
     }).catch(function(error) {
         console.log(error);
     })
-}
+};
 
 
 export const login = () => {
@@ -32,19 +34,19 @@ export const login = () => {
         console.log(errorMessage);
         window.location.hash = '#home';
     })
-  };
+};
 
 // Registrarse con Google
 export const googleRegistro = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
-}
+};
 
 // Registrarse con Facebook
 export const facebookRegistro = () => {
     const provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithRedirect(provider);
-}
+};
 
 // Función ingresar usuario ya registrado
 export const ingreso = () => {
@@ -61,11 +63,12 @@ export const ingreso = () => {
 // Funcion observador para ver si hay cuenta activa
 
 export const observador = () => {
-      firebase.auth().onAuthStateChanged(function(user) {
+      firebase.auth().onAuthStateChanged((user) {
       if (user) {
       console.log("existe usuario activo")
 
         const displayName = user.displayName;
+        console.log(user);
         const email = user.email;
         const emailVerified = user.emailVerified;
         const photoURL = user.photoURL;
@@ -77,12 +80,14 @@ export const observador = () => {
             console.log("sesión on");
             templateHome();
         } else {
-      console.log("no existe usuario activo")
+        templateRegister();
+        console.log("no existe usuario activo")
         }
     }
    })
-}
+};
 
+observador();
 
 // Función cerrar sesión
 
@@ -94,20 +99,5 @@ export const logOut = () => {
     .catch(function(error){
         console.log(error)
     })
-}
+};
 
-//Función para mandar email a usuario y verificar cuenta
-
-
-//Iniciar cambio de hash
-
-// export const initChange= () => {
-//     window.addEventListener('load', changeRouter(window.location.hash));
-//     // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
-//     if ('onhashchange' in window) {
-//       window.onhashchange = () => {
-//         changeRouter(window.location.hash);
-//       }
-//     }
-    
-//   }
