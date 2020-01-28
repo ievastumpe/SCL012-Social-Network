@@ -39,10 +39,7 @@ export const templateRegister = (cb) => {
   setTimeout(() => {
     // le pido que busque el id del boton y class del input dentro del div creado
     console.log("set timeout woring");
-    const emailSave = containerRegister.querySelector('#emailSave').value;
-    console.log(emailSave);
-    const passwordSave = containerRegister.querySelector('#passwordSave').value;
-    console.log(passwordSave);
+
     const btnSignUp = containerRegister.querySelector('#signUp');
     const btnGoogle = containerRegister.querySelector('#signUpGoogle');
     const linkLogin = containerRegister.querySelector('#loginHere');
@@ -50,6 +47,10 @@ export const templateRegister = (cb) => {
 
     // evento del botón que llama a la función registrar
     btnSignUp.addEventListener('click', () => {
+      const emailSave = containerRegister.querySelector('#emailSave').value;
+      console.log(emailSave);
+      const passwordSave = containerRegister.querySelector('#passwordSave').value;
+      console.log(passwordSave);
       register(emailSave, passwordSave);
       verificar;
       console.log("SignUp boton funciona");

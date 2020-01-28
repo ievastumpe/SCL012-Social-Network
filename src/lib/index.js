@@ -63,7 +63,7 @@ export const ingreso = () => {
 // Funcion observador para ver si hay cuenta activa
 
 export const observador = () => {
-      firebase.auth().onAuthStateChanged((user) {
+      firebase.auth().onAuthStateChanged((user) => {
       if (user) {
       console.log("existe usuario activo")
 

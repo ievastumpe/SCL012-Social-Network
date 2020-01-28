@@ -60,8 +60,8 @@ const routerHash = (hash) => {
   } 
   else if (hash === '#/login') {
     return templateLogin(hash);
-  } //else if (hash === '#/forum') {
-    //return templateForum(hash);
+  } else if (hash === '#/forum') {
+    return templateForum(hash);
   //} else if (hash === '#/profile') {
     //return templateProfile(hash);
   //}
