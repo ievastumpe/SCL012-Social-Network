@@ -24,22 +24,21 @@ export const templateLogin = () => {
     </form>
     </div>
     <p>¿No tienes una cuenta?</p>
-    <a id="toRegister" href="#register">Regístrate acá</a><br>
+    <button class="btnFormStyle" id="toRegister">Regístrate acá</button><br>
     </main>`;
     containerCreate.innerHTML = contentCreate;
     document.getElementById("content").innerHTML = contentCreate;
 
     const emailLogin = containerCreate.querySelector('#emailLogin').value;
     const passwordLogin = containerCreate.querySelector('#passwordLogin').value;
-    const toRegister = containerCreate.querySelector('#toRegister').value;
+    const goToRegister = containerCreate.querySelector('#toRegister').value;
     const enterLogin = containerCreate.querySelector('#enterLogin');
 
-    toRegister.addEventListener('click', () => {
+    goToRegister.addEventListener('click', () => {
       const container = document.getElementById('content');
       container.innerHTML='';
-        templateRegister();
         window.location.hash = '#register';
-      console.log("boton vuelta a login funciona");
+      console.log("boton vuelta a signUp funciona");
     })
 
     enterLogin.addEventListener('click', () => {

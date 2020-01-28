@@ -2,11 +2,8 @@ import { register } from './index.js';
 import { googleRegistro } from './index.js';
 import { templateLogin } from './login.js';
 import { templateHome } from './home.js';
-// import { verificar } from './index.js';
 
-// import { templateLogin } from './login.js';
-
-export const templateRegister = (cb) => {
+export const templateRegister = () => {
   console.log('register')
   window.location.hash = '#register'
   // creamos div que contendrá la plantilla
@@ -36,7 +33,6 @@ export const templateRegister = (cb) => {
   // pasar el contenido al div
   containerRegister.innerHTML = contentRegister;
 
-  setTimeout(() => {
     // le pido que busque el id del boton y class del input dentro del div creado
     const btnSignUp = containerRegister.querySelector('#signUp');
     const btnGoogle = containerRegister.querySelector('#signUpGoogle');
@@ -75,7 +71,5 @@ export const templateRegister = (cb) => {
       console.log("boton hacia home funciona");
     })
 
-
-    cb(containerRegister);
-  }, 0);
+  return containerRegister;
 }

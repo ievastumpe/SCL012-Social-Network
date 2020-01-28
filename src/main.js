@@ -40,7 +40,7 @@ const routerHash = (hash) => {
     return templateOn(hash);
     
   }
-}
+};
 
 // const goBack = () => {
 //   window.history.back();
@@ -66,10 +66,7 @@ export const templateOn = (hash) => {
     container.appendChild(templateHome());
   break;
   case 'register':
-    templateRegister(
-      (retContainer) => 
-        container.appendChild(retContainer)
-        )
+    container.appendChild(templateRegister());
   break;
   case 'login':
     container.appendChild(templateLogin());
