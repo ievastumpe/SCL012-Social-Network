@@ -1,53 +1,159 @@
-h1{
-position: absolute;
-width: 242px;
-height: 53px;
-left: 86px;
-top: 55px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 45px;
-line-height: 53px;
-/* identical to box height */
-
-text-align: center;
-
-color: #000000;
-}
-
-#logo{
-size: 100%;
+#content {
+    font-family: 'Roboto', sans-serif;
+    color:black;
+    text-align: center;
 }
 
 
-#descripcionAbajoLogo{
+@media screen and (max-width:560px) {
 
+    /* Pagina de registro */
+    .registerStyle {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .register-box {
+        background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #4DB6AC;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        margin: 45px;
+        width: 70%;
+        height: 300px;
+        left: 86px;
+        top: 171px;
+        padding: 10px;
+    }
+
+    .apiLogoStyle {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .register-box input[type="password"],
+    .register-box input[type="email"] {
+        outline: none;
+        width: 70%;
+        padding: 10px 15px;
+
+    }
+
+    .inputForm {
+        margin-bottom: 25px;
+    }
+
+
+    .titleForm {
+        color: white;
+        font-size: large;
+        
+    }
+
+    .btnFormStyle {
+        width: 132px;
+        height: 41px;
+        left: 134px;
+        top: 454px;
+        color: white;
+
+        background: #F57C00;
+        border-radius: 20px;
+        font-size: medium;
+        margin-bottom: 25px;
+    }
+
+    .btnFormStyle:hover {
+        background-color: tomato;
+        cursor: pointer;
+    }
+
+    .google-Btn {
+        width: 190px;
+        border-radius: 5px;
+    }
+    
+    .google-Btn:hover {
+        background-color: tomato;
+        cursor: pointer;
+    }
+
+
+
+      /* Pagina de Login */
+
+    .forgottenP {
+        margin-top: 25px;
+      }
+
+      /* Pagina Home */
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #4DB6AC;
+      }
+
+      .stgoView {
+        background-color: #F57C00;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        margin: 45px;
+        width: 70%;
+        height: 150px;
+        left: 86px;
+        top: 171px;
+        padding: 10px;
+      }
+
+      #selectSchool p {
+          color: white;
+      }
+
+    
 }
 
-.images{
+@media screen (min-width:561px) and (max-width:1280px) {
 
-}
+    .registerStyle {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
+    }
 
-.btn{
-
-}
-
-.btnMenu{
-
-}
-
-
-.close{
-
-}
-
-.login{
-
-}
-
-.input{
+    .register-box {
+        background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #4DB6AC;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        margin: 45px;
+        width: 70%;
+        height: 300px;
+        left: 86px;
+        top: 171px;
+        padding: 10px;
+    }
 
 }

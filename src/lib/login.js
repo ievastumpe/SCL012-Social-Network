@@ -1,26 +1,51 @@
-import { login } from '/lib/index.js';
-//import { templateHome } from '/lib/home.js';
+import { login } from './index.js';
+import { templateHome } from './home.js';
+import { templateRegister } from './register.js';
 
 export const templateLogin = () => {
     window.location.hash = '#login'
-    const containerLogin = document.createElement('div');
-    const contentLogin = `<p> Login en tu Cuenta </p>
-        <form>
-        <input type="email" id="emailLogin" placeholder="Ingresa tu email" class="input" required>
-        <input type="password" id="passwordLogin" placeholder="Ingresa tu contraseña" class="input" required>
-        <button id="btnLogin" class="btn">Acceder</button>
-        </form>`;
-    containerLogin.innerHTML = contentLogin;
-    document.getElementById("content").innerHTML = contentLogin;
+    const containerCreate = document.createElement('div');
+    containerCreate.setAttribute('class', 'loginStyle');
+    const contentCreate = `
+    <header>
+    <div class="logo">
+    <img class="apiLogoStyle" src="img/fontApoderapi.png" alt="apoderapiLogo">
+    </div>
+    </header>
+    <div class="register-box">
+    <main>
+    <h3 class="titleForm">Ingresa a tu cuenta</h3>
+    <form>
+    <input class="inputForm" type="email" id="emailLogin" placeholder="Ingresa tu email" class="input" required>
+    <input class="inputForm" type="password" id="passwordLogin" placeholder="Ingresa tu contraseña" class="input" required>
+    <button class="btnFormStyle" id="enterLogin" class="btn">Acceder</button><br>
+    <a class="forgottenP" id="forgottenPass" href="#">¿Olvidaste tu contraseña?</a>
+    </form>
+    </div>
+    <p>¿No tienes una cuenta?</p>
+    <a id="toRegister" href="#register">Regístrate acá</a><br>
+    </main>`;
+    containerCreate.innerHTML = contentCreate;
+    document.getElementById("content").innerHTML = contentCreate;
 
-    const emailLogin = containerLogin.querySelector('#emailLogin').value;
-    const passwordLogin = containerLogin.querySelector('#passwordLogin').value;
+    const emailLogin = containerCreate.querySelector('#emailLogin').value;
+    const passwordLogin = containerCreate.querySelector('#passwordLogin').value;
+    const toRegister = containerCreate.querySelector('#toRegister').value;
+    const enterLogin = containerCreate.querySelector('#enterLogin');
 
-    const btnLogin = containerLogin.querySelector('#btnLogin');
+    toRegister.addEventListener('click', () => {
+      const container = document.getElementById('content');
+      container.innerHTML='';
+        templateRegister();
+        window.location.hash = '#register';
+      console.log("boton vuelta a login funciona");
+    })
 
-    btnLogin.addEventListener('click', () => {
+    enterLogin.addEventListener('click', () => {
       const container = document.getElementById('content');
       container.innerHTML='';
       login(emailLogin, passwordLogin);
-      })
+      templateHome();
+      window.location.hash = '#home';
+    })
 };

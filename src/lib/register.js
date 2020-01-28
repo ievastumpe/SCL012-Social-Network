@@ -1,8 +1,8 @@
-import { register } from '/lib/index.js';
-import { verificar } from '/lib/index.js';
-import { googleRegistro } from '/lib/index.js';
-import { templateLogin } from '/lib/login.js';
-import { templateHome } from '/lib/home.js';
+import { register } from './index.js';
+import { googleRegistro } from './index.js';
+import { templateLogin } from './login.js';
+import { templateHome } from './home.js';
+// import { verificar } from './index.js';
 
 // import { templateLogin } from './login.js';
 
@@ -11,35 +11,33 @@ export const templateRegister = (cb) => {
   window.location.hash = '#register'
   // creamos div que contendrá la plantilla
   const containerRegister = document.createElement('div');
+  containerRegister.setAttribute('class', 'registerStyle');
   // creamos el contenido del login
   const contentRegister = `
   <header>
-  <div class="frontLogo">
-      <h2>NombreApp</h2>
-      <p>La comunidad de apoderados más grande de Chile</p>
+  <div class="logo">
+  <img class="apiLogoStyle" src="img/fontApoderapi.png" alt="apoderapiLogo">
   </div>
-</header>
-<main>
-  <div>
-  <h4>Crea tu cuenta</h4>
-  <input id="emailSave" type="email" placeholder="Ingresa tu mail" required="required">
-  <input id="passwordSave" type="password" placeholder="Ingresa una contraseña" required="required"><br>
-  <input id="olderSave" type="checkbox" required="required">Confirmo que soy mayor de edad<br>
-  <button id="signUp">Crear cuenta</button><br>
-  <p>Registrate con tu cuenta Google</p>
-  <button id="signUpGoogle">Acceder</button>
+  </header>
+  <main>
+  <div class="register-box">
+  <h3 class="titleForm">Crea tu cuenta</h3>
+  <input class="inputForm" id="emailSave" type="email" placeholder="Ingresa tu mail" required><br>
+  <input class="inputForm" id="passwordSave" type="password" placeholder="Ingresa una contraseña" required><br>
+  <button class="btnFormStyle" id="signUp">Registrarse</button><br>
+  </div>
+  <p>Regístrate con tu cuenta Google</p>
+  <img class="google-Btn" id="signUpGoogle" src="img/btn_google_signin_light_pressed_web@2x.png" alt="logoGoogle">
   <p>¿Ya tienes una cuenta?</p>
   <a id="loginHere" href="#login">Ingresa acá</a><br>
   <button id="toHome">Home</button>
-</main>
-`
+  </main>
+  `
   // pasar el contenido al div
   containerRegister.innerHTML = contentRegister;
 
   setTimeout(() => {
     // le pido que busque el id del boton y class del input dentro del div creado
-    console.log("set timeout woring");
-
     const btnSignUp = containerRegister.querySelector('#signUp');
     const btnGoogle = containerRegister.querySelector('#signUpGoogle');
     const linkLogin = containerRegister.querySelector('#loginHere');
@@ -47,13 +45,13 @@ export const templateRegister = (cb) => {
 
     // evento del botón que llama a la función registrar
     btnSignUp.addEventListener('click', () => {
-      const emailSave = containerRegister.querySelector('#emailSave').value;
-      console.log(emailSave);
-      const passwordSave = containerRegister.querySelector('#passwordSave').value;
-      console.log(passwordSave);
-      register(emailSave, passwordSave);
-      verificar;
-      console.log("SignUp boton funciona");
+      const email = containerRegister.querySelector('#emailSave').value;
+      console.log(email);
+      const password = containerRegister.querySelector('#passwordSave').value;
+      console.log(password);
+      register(email, password);
+      // verificar()
+      console.log("boton reg funciona");
     })
 
     btnGoogle.addEventListener('click', () => {
@@ -63,17 +61,17 @@ export const templateRegister = (cb) => {
 
     linkLogin.addEventListener('click', () => {
       const container = document.getElementById('content');
-      container.innerHTML='';
-        templateLogin();
-        window.location.hash = '#login';
+      container.innerHTML = '';
+      templateLogin();
+      window.location.hash = '#login';
       console.log("boton hacia login funciona");
     })
 
     btnHome.addEventListener('click', () => {
       const container = document.getElementById('content');
-      container.innerHTML='';
-        templateHome();
-        window.location.hash = '#home';
+      container.innerHTML = '';
+      templateHome();
+      window.location.hash = '#home';
       console.log("boton hacia home funciona");
     })
 
