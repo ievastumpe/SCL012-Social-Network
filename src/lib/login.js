@@ -3,6 +3,7 @@ import { templateHome } from './home.js';
 import { templateRegister } from './register.js';
 
 export const templateLogin = () => {
+    console.log('holaaa')
     window.location.hash = '#login'
     const containerCreate = document.createElement('div');
     containerCreate.setAttribute('class', 'loginStyle');
@@ -45,7 +46,7 @@ export const templateLogin = () => {
       const container = document.getElementById('content');
       container.innerHTML='';
       login(emailLogin, passwordLogin);
-      templateHome();
+      templateHome()
       window.location.hash = '#home';
     })
 };

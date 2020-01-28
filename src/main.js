@@ -13,7 +13,6 @@ console.log('windowsHash working')
 
 // Inicializar Firebase
 const init = () => {
-  console.log('init working')
           firebase.initializeApp({
           apiKey: "AIzaSyA866dHzLXbsfmKkNn69rj4ZrVxCLnfEb0",
           authDomain: "red-social-lab20.firebaseapp.com",
@@ -31,6 +30,7 @@ const init = () => {
   }
   
 init();
+
 
 // Carga el template del hash correspondiente
 const routerHash = (hash) => {
@@ -50,6 +50,7 @@ const routerHash = (hash) => {
   //} else if (hash === '#/profile') {
     //return templateProfile(hash);
   //}
+  }
 };
 
 // const goBack = () => {
@@ -67,31 +68,30 @@ const routerHash = (hash) => {
 
 // Imprimir template del hash correspondiente en el div del html
 export const templateOn = (hash) => {
-    const router = hash.substring(2); //pide que lea desde el 2do caracter, se salta el #/
-    const container = document.getElementById('content');
-    container.innerHTML = ''; //vaciar contenedor para prender el div
+  const router = hash.substring(2); //pide que lea desde el 2do caracter, se salta el #/
+  const container = document.getElementById('content');
+  container.innerHTML = ''; //vaciar contenedor para prender el div
+// Coincidir hash con template 
  // Coincidir hash con template 
- switch (router) {
-  case 'home':
-    container.appendChild(templateHome());
-  break;
-  case 'register':
-    templateRegister(
-      (retContainer) => 
-        container.appendChild(retContainer)
-        )
-  break;
-  case 'login':
-    templateLogin(
-      (retContainer) => 
-        container.appendChild(retContainer)
-        )
-    break;
-  // case 'login'/'feedcolegios'/'colegioProfile'/'userProfile'/'forum'
-  //   containerRoot.appendChild(templateLogIn());
-  // break;
- 
-  default:
-    container.innerHTML = `<h3>Página no encontrada</h3>`
-  }
+// Coincidir hash con template 
+switch (router) {
+case 'home':
+  container.appendChild(templateHome());
+break;
+case 'register':
+  templateRegister(
+    (retContainer) => 
+      container.appendChild(retContainer)
+      )
+break;
+case 'login':
+  container.appendChild(templateLogin());
+break;
+// case 'login'/'feedcolegios'/'colegioProfile'/'userProfile'/'forum'
+//   containerRoot.appendChild(templateLogIn());
+// break;
+
+default:
+  container.innerHTML = `<h3>P[agina no encontrada</hr>`
+}
 };

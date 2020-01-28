@@ -8,6 +8,7 @@ import { templateHome } from './home.js';
 
 export const templateRegister = (cb) => {
 
+  console.log('register')
   window.location.hash = '#register'
   // creamos div que contendrá la plantilla
   const containerRegister = document.createElement('div');

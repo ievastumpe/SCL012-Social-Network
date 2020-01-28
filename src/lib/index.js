@@ -1,5 +1,3 @@
-import {afterLogIn} from /lib/register.js;
-
 // aqui exportaras las funciones que necesites
 import { templateHome } from './home.js';
 // Enviar correo de verificacion de cuenta 
@@ -85,9 +83,7 @@ export const observador = () => {
         }
     }
    })
-};
-
-observador();
+}
 
 // Función cerrar sesión
 
