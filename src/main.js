@@ -3,6 +3,7 @@ import { templateRegister } from './lib/register.js';
 import { observador } from './lib/index.js';
 import { templateLogin } from './lib/login.js';
 import { templateHome } from './lib/home.js';
+import { templateForum } from './lib/forum2.js';
 
 
 window.onhashchange = () => {
@@ -31,7 +32,6 @@ const init = () => {
   
 init();
 
-
 // Carga el template del hash correspondiente
 const routerHash = (hash) => {
   if(hash === ''){ //hash por defecto muestra home
@@ -41,14 +41,15 @@ const routerHash = (hash) => {
     return templateOn(hash);
   } 
   else if (hash === '#/register') {
-    return templateRegister(hash);
+    console.log('register hash working');
+    return templateOn(hash);
   } 
   else if (hash === '#/login') {
     return templateLogin(hash);
-  } else if (hash === '#/forum') {
-    return templateForum(hash);
-  //} else if (hash === '#/profile') {
-    //return templateProfile(hash);
+  } 
+  else if (hash === '#/forum') {
+    console.log('forum hash working');
+    return templateOn('#/forum');
   }
 };
 
@@ -73,22 +74,24 @@ export const templateOn = (hash) => {
 // Coincidir hash con template 
  // Coincidir hash con template 
 // Coincidir hash con template 
+console.log(router);
 switch (router) {
 case 'home':
   container.appendChild(templateHome());
 break;
 case 'register':
+  console.log('hello');
   container.appendChild(templateRegister());
 break;
 case 'login':
   container.appendChild(templateLogin());
 break;
-// case 'login'/'feedcolegios'/'colegioProfile'/'userProfile'/'forum'
-//   containerRoot.appendChild(templateLogIn());
-// break;
-
+case 'forum':
+  container.appendChild(templateForum());
+  console.log('hello forum');
+break;
 default:
-  container.innerHTML = `<h3>P[agina no encontrada</hr>`
+  container.innerHTML = `<h3>Pagina no encontrada</hr>`
 }
 
 };
