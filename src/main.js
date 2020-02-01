@@ -18,7 +18,7 @@ const init = () => {
     projectId: 'red-social-lab20',
     storageBucket: 'red-social-lab20.appspot.com',
     messagingSenderId: '871920292627',
-    appId: '1:871920292627:web:8f2ebda74348e502a400e6'
+    appId: '1:871920292627:web:8f2ebda74348e502a400e6',
   });
   // Initialize Firebase
   window.location.hash = '#register';
