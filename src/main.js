@@ -1,8 +1,8 @@
 
-import { templateRegister } from '/lib/register.js';
-import { observador } from '/lib/index.js';
-import { templateLogin } from '/lib/login.js';
-import { templateHome } from '/lib/home.js';
+import { templateRegister } from './lib/register.js';
+import { observador } from './lib/index.js';
+import { templateLogin } from './lib/login.js';
+import { templateHome } from './lib/home.js';
 
 
 window.onhashchange = () => {
@@ -49,7 +49,6 @@ const routerHash = (hash) => {
     return templateForum(hash);
   //} else if (hash === '#/profile') {
     //return templateProfile(hash);
-  //}
   }
 };
 
@@ -79,10 +78,7 @@ case 'home':
   container.appendChild(templateHome());
 break;
 case 'register':
-  templateRegister(
-    (retContainer) => 
-      container.appendChild(retContainer)
-      )
+  container.appendChild(templateRegister());
 break;
 case 'login':
   container.appendChild(templateLogin());
@@ -94,4 +90,5 @@ break;
 default:
   container.innerHTML = `<h3>P[agina no encontrada</hr>`
 }
+
 };
