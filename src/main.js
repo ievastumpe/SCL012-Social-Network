@@ -15,13 +15,13 @@ console.log('windowsHash working')
 // Inicializar Firebase
 const init = () => {
           firebase.initializeApp({
-          apiKey: "AIzaSyA866dHzLXbsfmKkNn69rj4ZrVxCLnfEb0",
-          authDomain: "red-social-lab20.firebaseapp.com",
-          databaseURL: "https://red-social-lab20.firebaseio.com",
-          projectId: "red-social-lab20",
-          storageBucket: "red-social-lab20.appspot.com",
-          messagingSenderId: "871920292627",
-          appId: "1:871920292627:web:8f2ebda74348e502a400e6"
+            apiKey: "AIzaSyBkaiafAwTseLjyCpFhhCb6IDsKlzvf2Mg",
+            authDomain: "apoderapi2.firebaseapp.com",
+            databaseURL: "https://apoderapi2.firebaseio.com",
+            projectId: "apoderapi2",
+            storageBucket: "apoderapi2.appspot.com",
+            messagingSenderId: "903864325494",
+            appId: "1:903864325494:web:b1c21b8717c64b435e9657"
         });
         // Initialize Firebase
         console.log('hash register working')
