@@ -1,5 +1,6 @@
 // aqui exportaras las funciones que necesites
 import { templateHome } from './home.js';
+
 // Enviar correo de verificacion de cuenta 
   const verify = () => {
     const user = firebase.auth().currentUser;
@@ -48,6 +49,7 @@ export const facebookRegistro = () => {
 
 // Función ingresar usuario ya registrado
 export const login = () => {
+  console.log(emailLogin, passwordLogin);
   firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
       .catch(function(error) {
       // Handle Errors here.
