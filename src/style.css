@@ -5,6 +5,17 @@
     text-align: center;
 }
 
+#forumStyle {
+    background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #4DB6AC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    margin: 45px;
+    width: 100%;
+    height: 300px;
+    left: 86px;
+    top: 171px;
+    padding: 10px;
+}
 
 @media screen and (max-width:560px) {
 
@@ -51,6 +62,11 @@
         color: white;
         font-size: large;
         
+    }
+
+    .titleForum {
+        color: black;
+        font-size: large; 
     }
 
     .btnFormStyle {
@@ -134,14 +150,13 @@
     
 }
 
-@media screen (min-width:561px) and (max-width:1280px) {
+@media screen and (min-width:561px) and (max-width:1280px) {
 
     .registerStyle {
         background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
-
     }
 
     .register-box {
