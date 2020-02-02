@@ -1,13 +1,12 @@
 import { login } from './index.js';
-import { templateHome } from './home.js';
 import { templateRegister } from './register.js';
 
 export const templateLogin = () => {
-    console.log('holaaa')
+    console.log('holaaa Login')
     window.location.hash = '#login'
-    const containerCreate = document.createElement('div');
-    containerCreate.setAttribute('class', 'loginStyle');
-    const contentCreate = `
+    const containerLogin = document.createElement('div');
+    containerLogin.setAttribute('class', 'loginStyle');
+    const contentLogin = `
     <header>
     <div class="logo">
     <img class="apiLogoStyle" src="img/fontApoderapi.png" alt="apoderapiLogo">
@@ -26,27 +25,27 @@ export const templateLogin = () => {
     <p>¿No tienes una cuenta?</p>
     <a id="toRegister" href="#register">Regístrate acá</a><br>
     </main>`;
-    containerCreate.innerHTML = contentCreate;
-    document.getElementById("content").innerHTML = contentCreate;
+    containerLogin.innerHTML = contentLogin;
+    document.getElementById("content").innerHTML = contentLogin;
 
-    const emailLogin = containerCreate.querySelector('#emailLogin').value;
-    const passwordLogin = containerCreate.querySelector('#passwordLogin').value;
-    const toRegister = containerCreate.querySelector('#toRegister').value;
-    const enterLogin = containerCreate.querySelector('#enterLogin');
 
-    toRegister.addEventListener('click', () => {
-      const container = document.getElementById('content');
-      container.innerHTML='';
-        templateRegister();
-        window.location.hash = '#register';
-      console.log("boton vuelta a login funciona");
-    })
+   const toRegister = containerLogin.querySelector('#toRegister').value;
+   const container = document.getElementById('content');
+
+   toRegister.addEventListener('click', () => {
+      container.innerHTML = '';
+      templateRegister();
+      window.location.hash = '#register';
+      console.log("boton to register funciona");
+      });
+
+    const enterLogin = containerLogin.querySelector('#enterLogin');
 
     enterLogin.addEventListener('click', () => {
-      const container = document.getElementById('content');
-      container.innerHTML='';
+      console.log('button enterLogin working');
       login(emailLogin, passwordLogin);
-      templateHome()
+      const emailLogin = containerLogin.querySelector('#emailLogin').value;
+      const passwordLogin = containerLogin.querySelector('#passwordLogin').value;
       window.location.hash = '#home';
-    })
+    });
 };
