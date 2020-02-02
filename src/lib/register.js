@@ -2,12 +2,9 @@ import { register } from './index.js';
 import { googleRegistro } from './index.js';
 import { templateLogin } from './login.js';
 import { templateHome } from './home.js';
-// import { verificar } from './index.js';
-
-// import { templateLogin } from './login.js';
+import { templateForum } from './forum2.js';
 
 export const templateRegister = () => {
-  console.log('register')
   window.location.hash = '#register'
   // creamos div que contendrá la plantilla
   const containerRegister = document.createElement('div');
@@ -31,49 +28,58 @@ export const templateRegister = () => {
   <p>¿Ya tienes una cuenta?</p>
   <a id="loginHere" href="#login">Ingresa acá</a><br>
   <button id="toHome">Home</button>
+  <button id="toForum">Forum</button>
   </main>
-  `
+  `;
   // pasar el contenido al div
   containerRegister.innerHTML = contentRegister;
 
-    // le pido que busque el id del boton y class del input dentro del div creado
-    const btnSignUp = containerRegister.querySelector('#signUp');
-    const btnGoogle = containerRegister.querySelector('#signUpGoogle');
-    const linkLogin = containerRegister.querySelector('#loginHere');
-    const btnHome = containerRegister.querySelector('#toHome');
+  // le pido que busque el id del boton y class del input dentro del div creado
+  const btnSignUp = containerRegister.querySelector('#signUp');
+  const btnGoogle = containerRegister.querySelector('#signUpGoogle');
+  const linkLogin = containerRegister.querySelector('#loginHere');
+  const btnHome = containerRegister.querySelector('#toHome');
+  const btnForum = containerRegister.querySelector('#toForum');
 
-    // evento del botón que llama a la función registrar
-    btnSignUp.addEventListener('click', () => {
-      const email = containerRegister.querySelector('#emailSave').value;
-      console.log(email);
-      const password = containerRegister.querySelector('#passwordSave').value;
-      console.log(password);
-      register(email, password);
-      // verificar()
-      console.log("boton reg funciona");
-    })
+  // evento del botón que llama a la función registrar
+  btnSignUp.addEventListener('click', () => {
+  const email = containerRegister.querySelector('#emailSave').value;
+  console.log(email);
+  const password = containerRegister.querySelector('#passwordSave').value;
+  console.log(password);
+  register(email, password);
+  // verificar()
+  console.log("boton reg funciona");
+  });
 
-    btnGoogle.addEventListener('click', () => {
-      googleRegistro();
-      console.log("boton google funciona");
-    })
+  btnGoogle.addEventListener('click', () => {
+  googleRegistro();
+  console.log('boton google funciona');
+  });
 
-    linkLogin.addEventListener('click', () => {
-      const container = document.getElementById('content');
-      container.innerHTML = '';
-      templateLogin();
-      window.location.hash = '#login';
-      console.log("boton hacia login funciona");
-    })
+  linkLogin.addEventListener('click', () => {
+  const container = document.getElementById('content');
+  container.innerHTML = '';
+  templateLogin();
+  window.location.hash = '#login';
+  console.log("boton hacia login funciona");
+  });
 
-    btnHome.addEventListener('click', () => {
-      const container = document.getElementById('content');
-      container.innerHTML = '';
-      templateHome();
-      window.location.hash = '#home';
-      console.log("boton hacia home funciona");
-    })
+  btnHome.addEventListener('click', () => {
+  const container = document.getElementById('content');
+  container.innerHTML = '';
+  templateHome();
+  window.location.hash = '#home';
+  console.log("boton hacia home funciona");
+  });
 
+  btnForum.addEventListener('click', () => {
+    const container = document.getElementById('content');
+    container.innerHTML = '';
+    templateForum();
+    window.location.hash = '#forum';
+    console.log("boton hacia forum funciona");
+    });
 
-    return containerRegister;
-}
+  return containerRegister;
+};
