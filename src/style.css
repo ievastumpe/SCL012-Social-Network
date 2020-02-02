@@ -21,33 +21,42 @@ color: #000000;
 size: 100%;
 }
 
+@media screen and (max-width:560px) and (min-width:300px){
 
-#descripcionAbajoLogo{
-
+/*tarjeta*/
+.businessCard{
+    /* width: 55%; */
+    margin: auto;
+    border: solid 2px #48a999;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    /* flex-direction: column;   */
+    font-family: 'roboto', sans-serif;
+    flex-wrap: wrap;
+}
+.businessCard img{
+    display: flex;
+    margin: 3px;
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+}
+.contentStyle{
+    display: flex;
+    flex-direction: row;
+    flex-direction: column; 
 }
 
-.images{
-
+ .titulo{
+    display: flex;
 }
-
-
-.btn{
-
+.contenido{
+    display: flex;
+    flex: start;
 }
-
-.btnMenu{
-
+.img{
+    display: flex;
+    justify-content: space-between;
 }
-
-
-.close{
-
-}
-
-.login{
-
-}
-
-.input{
-
 }

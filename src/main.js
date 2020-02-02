@@ -3,6 +3,9 @@ import { templateRegister } from './lib/register.js';
 import { observador } from './lib/index.js';
 import { templateLogin } from './lib/login.js';
 import { templateHome } from './lib/home.js';
+import   colegios  from './colegios.js';
+console.log(colegios);
+
 
 
 window.onhashchange = () => {
@@ -42,16 +45,6 @@ init();
 
 
 
-<<<<<<< HEAD
-// function aparece(){
-//     const contenido = document.getElementById("contenido");
-//     contenido.innerHTML = `
-//     <p>Bienvenido!</p>
-//     <button onclick="cerrar()">Cerrar Sesión</button>
-//     `;
-// }
-//Api//
-=======
 
 //Carga el template del hash correspondiente
 const routerHash = (hash) => {
@@ -107,4 +100,3 @@ export const templateOn = (hash) => {
     container.innerHTML = `<h3>Página no encontrada</h3>`
   }
 };
->>>>>>> e1d090444166ba33e5a715ea6a3600e026d98482

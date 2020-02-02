@@ -1,5 +1,4 @@
-export default
-[
+export default [
     {
       "name": "Liceo Augusto dHalamr",
       "Comuna": "Ñuñoa",
@@ -387,7 +386,7 @@ export default
 
 },
 {
-  "name": "",
+  "name": "Colegio San Damián",
   "Comuna": "Cerro Navia",
   "id": "124",
   "Direccion": "Doctor Sótero del Río 593",
@@ -433,7 +432,6 @@ export default
   "alive": true,
   "image" :""
 
-<<<<<<< HEAD
 },
 {
   "name": "Colegio Echaurren",
@@ -498,13 +496,6 @@ export default
   "alive": true,
   "image" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZJ4qD6OahsqdM_gqT9V5098HYFetgD9dXnFqgkXHOQjoZ8Drk_g&s"
 
-},
-
-
-
-
-=======
 }
->>>>>>> e1d090444166ba33e5a715ea6a3600e026d98482
 
-]
+];

@@ -1,43 +1,4 @@
 
-
-export const selectionComunas = (Ccolegios) => {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function registrar(){
     const email = document.getElementById("email").value;
     const contrasena = document.getElementById("contrasena").value;
