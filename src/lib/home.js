@@ -80,9 +80,7 @@ const contentHome = `<header>
     </select>
 </div>  
 </main>
-<footer>
-<h4>Todos los derechos reservados</h4>
-</footer>`;
+`;
 containerHome.innerHTML = contentHome;
 document.getElementById("content").innerHTML = contentHome;
 

@@ -2,8 +2,6 @@ import { register } from './index.js';
 import { googleRegistro } from './index.js';
 import { templateLogin } from './login.js';
 import { templateHome } from './home.js';
-import { templateForum } from './forum2.js';
-
 export const templateRegister = () => {
   console.log('register');
   window.location.hash = '#register';
@@ -32,8 +30,6 @@ export const templateRegister = () => {
   <img class="google-Btn" id="signUpGoogle" src="img/btn_google_signin_light_pressed_web@2x.png" alt="logoGoogle">
   <p>¿Ya tienes una cuenta?</p>
   <a id="loginHere" href="#login">Ingresa acá</a><br>
-  <button id="toHome">Home</button>
-  <button id="toForum">Forum</button>
   </div>
   </main>
   `;
@@ -44,7 +40,7 @@ export const templateRegister = () => {
   const btnSignUp = containerRegister.querySelector('#signUp');
   const btnGoogle = containerRegister.querySelector('#signUpGoogle');
   const linkLogin = containerRegister.querySelector('#loginHere');
-  const btnForum = containerRegister.querySelector('#toForum');
+  //const btnForum = containerRegister.querySelector('#toForum');
   // const btnHome = containerRegister.querySelector('#toHome');
 
   // evento del botón que llama a la función registrar
@@ -70,13 +66,13 @@ export const templateRegister = () => {
     console.log('boton hacia login funciona');
   });
 
-  btnForum.addEventListener('click', () => {
-    const container = document.getElementById('content');
-    container.innerHTML = '';
-    templateForum();
-    window.location.hash = '#forum';
-    console.log("boton hacia forum funciona");
-    });
+  // btnForum.addEventListener('click', () => {
+  //   const container = document.getElementById('content');
+  //   container.innerHTML = '';
+  //   templateForum();
+  //   window.location.hash = '#forum';
+  //   console.log("boton hacia forum funciona");
+  //   });
 
   // btnHome.addEventListener('click', () => {
   //   const container = document.getElementById('content');
@@ -87,4 +83,4 @@ export const templateRegister = () => {
   // });
 
   return containerRegister;
-};
+}
