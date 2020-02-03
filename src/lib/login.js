@@ -7,23 +7,24 @@ export const templateLogin = (cb) => {
   containerCreate.setAttribute('class', 'loginStyle');
 
   const contentCreate = `
-    <header>
-    <div class="logo">
-    <img class="apiLogoStyle" src="img/apoderapiFlat.png" alt="apoderapiLogo">
-    </div>
-    </header>
-    <div class="register-box login">
+  <header>
+  <div class="logo">
+  <img class="apiLogoStyle" src="img/apoderapiFlat.png" alt="apoderapiLogo">
+  <img class="apiNameStyle" src="img/logosinfondo.png" alt="apoderapiLogo">
+  </div>
+  </header>
     <main class="mainStyle">
+    <div class="login-box">
     <h3 class="titleForm">Ingresa a tu cuenta</h3>
     <input class="inputForm" type="email" id="emailLogin" placeholder="Ingresa tu email" required>
     <input class="inputForm" type="password" id="passwordLogin" placeholder="Ingresa tu contraseña" required>
-        <a class="forgottenP" id="forgottenPass" href="#">¿Olvidaste tu contraseña?</a>
+    <a class="forgottenP" id="forgottenPass" href="#">¿Olvidaste tu contraseña?</a><br>
     <button id="enterLogin" class="btnFormStyle">Acceder</button>
     <br>
-    <div class="loginLinks">
+    </div>
+    <div class="linksStyle">
     <p>¿No tienes una cuenta?</p>
     <a id="toRegister" href="#register">Regístrate acá</a><br>
-    </div>
     </div>
     </main>
     `;

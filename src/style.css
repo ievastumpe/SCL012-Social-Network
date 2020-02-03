@@ -1,13 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
 
 #content {
     font-family: 'Roboto', sans-serif;
     color:black;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
     flex-direction: column;
-    text-align: center; 
+    text-align: center;
 }
 
 @media screen  and (max-width:560px) and (min-width:300px) {
@@ -22,10 +24,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        margin-top: 5%;
     }
 
     .apiLogoStyle {
-        width: 30%;
+        width: 15%;
+    }
+
+    .apiNameStyle {
+        width: 60%;
     }
 
     .mainStyle {
@@ -46,6 +54,22 @@
         left: 86px;
         top: 171px;
         padding: 20px;
+    }
+
+    .login-box {
+        background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #4DB6AC;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        margin: 5%;
+        width: 70%;
+        height: 240px;
+        left: 86px;
+        top: 171px;
+        padding: 20px;
+    }
+
+    .inputDiv {
+        margin: 20px;
     }
 
     .inputForm {
@@ -96,9 +120,27 @@
     }
 
     /* Pagina Home */
+
+    .apiMobileStyle {
+        width: 50%;
+    }
+
     .icons-style {
         height: 20px;
         width: 20px;
+    }
+
+    .up-bar {
+        display: none;
+    }
+
+    .mobile-bar {
+        display: block;
+    }
+
+    .headMobile {
+        background-color: #2f9f97;
+        padding: 10px;        
     }
 
     ul {
@@ -106,7 +148,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: rgb(216, 216, 216);
+        background-color: #2f9f97;
     }
         
     li {
@@ -122,11 +164,36 @@
     }
         
     li a:hover {
-        background-color: #4DB6AC;
+        background-color: rgb(177, 177, 177);
     }
 
     .stgoView {
-        background-color: #4DB6AC;
+        display: flex;
+        justify-content: center;
+    }
+
+    #selectSchool {
+        display: flex;
+        background: linear-gradient(180deg, rgb(245, 171, 34) 0%, rgba(255, 255, 255, 0) 100%), #F57C00;
+        width: 300px;
+        height: 80px;
+        border-radius: 30px;
+        box-shadow: 0px 4px 4px
+        rgba(0, 0, 0, 0.25);
+        margin: 2%;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .selectStyle {
+        color: white;
+        font-weight: bold;
+        padding: 5%;
+    }
+
+    /* .stgoView {
+        background-color: linear-gradient(180deg, rgb(245, 171, 34) 0%, rgba(255, 255, 255, 0) 100%), #F57C00;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 30px;
         margin: 45px;
@@ -139,26 +206,13 @@
 
     #selectSchool p {
         color: white;
-        }
+        
+        } */
 }
 
-@media screen and (min-width:561px) {
-    #content {
-        font-family: 'Roboto', sans-serif;
-        color:black;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center; 
-    }
+/* ====== PARA TABLETS O DESKTOP ======  */
 
-    body {        
-        background-image: url('img/paperBackground.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-    };
+@media screen and (min-width:561px) {
 
     .titleForm {
         color: white;
@@ -167,20 +221,28 @@
     }
 
     .registerStyle {
-        background-color: white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
-    };
+    }
 
     .logo {
+        display: flex;
         justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        margin-top: 20px;
     }
 
     .apiLogoStyle {
-        width: 20%;
+        width: 18%;
+    }
+
+    .apiNameStyle {
+        width: 50%;
     }
 
     .mainStyle {
@@ -192,7 +254,7 @@
     }
 
     .register-box {
-        background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #4DB6AC;
+        background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #2f9f97;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 30px;
         margin: 5%;
@@ -201,6 +263,20 @@
         left: 86px;
         top: 171px;
         padding: 20px;
+    }
+
+    .linksStyle {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .linksStyle p {
+        margin: 10px;
+        margin-top: 10px;
+
     }
 
     .google-Btn {
@@ -213,13 +289,16 @@
         cursor: pointer;
     }
 
+    .inputDiv {
+        margin-top: 20px;
+    }
+
     .inputForm {
         margin-bottom: 25px;
         outline: none;
         width: 80%;
         padding: 10px 15px;
         border-radius: 15px;        
-
     }
 
     .btnFormStyle {
@@ -232,14 +311,32 @@
         background: #F57C00;
         border-radius: 20px;
         font-size: medium;
-        margin-bottom: 25px;
+        margin-top: 20px;
     }
 
     .btnFormStyle:hover {
         background-color: tomato;
         cursor: pointer;
     }
+
 /* Pagina de Login */    
+
+    .login-box {
+        background: linear-gradient(180deg, #4AE387 0%, rgba(255, 255, 255, 0) 100%), #2f9f97;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+        margin: 5%;
+        width: 40%;
+        height: 260px;
+        left: 86px;
+        top: 171px;
+        padding: 20px;
+    }
+
+    .login-box h3 {
+        margin-bottom: 10px;
+    }
+
     .loginStyle {
         display: flex;
         justify-content: center;
@@ -248,10 +345,11 @@
         flex-direction: column;
     }
 
-    .loginLinks {
+/* Pagina de Home */
+
+    header {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-between;
     }
 
     .nav {
@@ -262,20 +360,72 @@
         background-color: rgb(228, 228, 228);
     }
 
-    /* .homeStyle {
+    .up-bar {
+        display: block;
+    }
 
-    } */
+    .mobile-bar {
+        display: none;
+    }
 
-/* Pagina de Home */
+    .logoStyle {
+        width: 30%;
+        float: left;
+        margin-right: 280px;
+    }
 
+    .icons-style {
+        margin-right: 5px;
+    }
 
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 10px;
+        overflow: hidden;
+        background-color: #2f9f97;
+    }
+            
+    li {
+        float: right;
+    }
+            
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+    }
+            
+    li a:hover {
+        background-color: rgb(177, 177, 177);
+    }
 
+    .stgoView {
+        display: flex;
+        justify-content: center;
+    }
 
+    #selectSchool {
+        display: flex;
+        background: linear-gradient(180deg, rgb(245, 171, 34) 0%, rgba(255, 255, 255, 0) 100%), #F57C00;
+        width: 500px;
+        height: 80px;
+        border-radius: 30px;
+        box-shadow: 0px 4px 4px
+        rgba(0, 0, 0, 0.25);
+        margin: 2%;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .selectStyle {
+        color: white;
+        font-weight: bold;
+        padding: 5%;
+    }
 
-
-
-
-
-
-};
+}
