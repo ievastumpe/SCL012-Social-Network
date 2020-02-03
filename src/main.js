@@ -4,6 +4,8 @@ import { observador } from './lib/index.js';
 import { templateLogin } from './lib/login.js';
 import { templateHome } from './lib/home.js';
 import { templateForum } from './lib/forum2.js';
+import  {colegios} from './colegios.js';
+console.log(colegios);
 
 
 window.onhashchange = () => {

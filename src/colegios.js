@@ -1,5 +1,4 @@
-export default
-[
+export default [
     {
       "name": "Liceo Augusto dHalamr",
       "Comuna": "Ñuñoa",
@@ -387,7 +386,7 @@ export default
 
 },
 {
-  "name": "",
+  "name": "Colegio San Damián",
   "Comuna": "Cerro Navia",
   "id": "124",
   "Direccion": "Doctor Sótero del Río 593",
@@ -433,6 +432,73 @@ export default
   "alive": true,
   "image" :""
 
+<<<<<<< HEAD
+=======
+},
+{
+  "name": "Colegio Echaurren",
+  "Comuna": "Estacion Central",
+  "id": "127",
+  "Direccion": "Luis Infante Cerda 5484",
+  "Telefono": "+5622741 3747",
+  "Email": "No Registra",
+  "puntuación": "200",
+  "Reseña": "Ser una institución educativa que desarrolla al máximo las potencialidades de nuestros estudiantes, sustentada en la cosmovisión bíblica; asumiendo la vanguardia educativa en nuestra comuna",
+  "web": "https://colegioechaurren.cl/",
+  "colegioStudent": true,
+  "escuelaStaff": false,
+  "alive": true,
+  "image" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROkwQ2fIiXNKaLGhT0XoysiNtXz3hp-6r8AByNQzimjR8Afa_y&s"
+
+},
+{
+  "name": "Colegio Pumahue Huechuraba",
+  "Comuna": "Huechuraba",
+  "id": "128",
+  "Direccion": "Av. Sta. Rosa de Huechuraba 7201",
+  "Telefono": "+562 2605 9003",
+  "Email": "consultachile@cognita.com",
+  "puntuación": "200",
+  "Reseña": "Formamos personas íntegras, desafiándolas a desarrollar su máximo potencial para que lideren su vida, contribuyendo positivamente en un mundo global y cambiante.",
+  "web": "https://www.pumahue.cl/huechuraba/",
+  "colegioStudent": true,
+  "escuelaStaff": false,
+  "alive": true,
+  "image" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNYmgvyqqN4GO96GUP0dzXRSvGjj6HKgcGUkyWlarZICURPsGOgA&s"
+
+},
+{
+  "name": "Liceo Rosa Ester Alessandri Rodríguez",
+  "Comuna": "Independencia",
+  "id": "129",
+  "Direccion": "Huasco 1889",
+  "Telefono": " +5622710 3066",
+  "Email": " isescribano@rear.cl",
+  "puntuación": "200",
+  "Reseña": "Desarrollamos el  “El juego Justo” como filosofía de vida, promoviendo una alimentación adecuada y actividad física sistemática, en pos de un estilo de vida saludable. Incluyendo en el universo de la Unidad Educativa la Pasión por la acción con responsabilidad social.",
+  "web": "https://www.independencia.cl/centros-educacionales/",
+  "colegioStudent": true,
+  "escuelaStaff": false,
+  "alive": true,
+  "image" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjc58pm3U-cOEPLIBAJ5Odw16RbhzbCBRNLP1zG_g62gDGON7U8g&s"
+
+},
+{
+  "name": "Colegio Naciones Unidas",
+  "Comuna": "La Cisterna",
+  "id": "130",
+  "Direccion": "Isabel La Católica 960",
+  "Telefono": "+562558 6869",
+  "Email": "n_unidas@cisterna.cl",
+  "puntuación": "200",
+  "Reseña": "Desarrollamos el  “El juego Justo” como filosofía de vida, promoviendo una alimentación adecuada y actividad física sistemática, en pos de un estilo de vida saludable. Incluyendo en el universo de la Unidad Educativa la Pasión por la acción con responsabilidad social.",
+  "web": "https://www.escuelanacionesunidas.com/",
+  "colegioStudent": true,
+  "escuelaStaff": false,
+  "alive": true,
+  "image" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZJ4qD6OahsqdM_gqT9V5098HYFetgD9dXnFqgkXHOQjoZ8Drk_g&s"
+
+>>>>>>> bd60843648577594628e61ec98fb593f0b3f0cad
 }
 
-]
+];
