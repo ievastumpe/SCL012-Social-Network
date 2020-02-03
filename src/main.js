@@ -97,3 +97,6 @@ const routerHash = (hash) => {
     return templateOn('#forum');
   }
 };
+
+observador();
+
