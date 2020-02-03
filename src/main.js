@@ -7,7 +7,6 @@ import { templateForum } from './lib/forum2.js';
 import  {colegios} from './colegios.js';
 console.log(colegios);
 
-
 window.onhashchange = () => {
   routerHash(window.location.hash);
 }
@@ -27,33 +26,13 @@ const init = () => {
         });
         // Initialize Firebase
         console.log('hash register working')
-        window.location.hash = "#/register";
+        window.location.hash = "#register";
         observador();
         console.log('observador working');
   }
   
 init();
 
-// Carga el template del hash correspondiente
-const routerHash = (hash) => {
-  if(hash === ''){ //hash por defecto muestra home
-    return templateOn('#/home');
-  } 
-  else if (hash === '#/home') {
-    return templateOn(hash);
-  } 
-  else if (hash === '#/register') {
-    console.log('register hash working');
-    return templateOn(hash);
-  } 
-  else if (hash === '#/login') {
-    return templateLogin(hash);
-  } 
-  else if (hash === '#/forum') {
-    console.log('forum hash working');
-    return templateOn('#/forum');
-  }
-};
 
 // const goBack = () => {
 //   window.history.back();
@@ -96,4 +75,25 @@ default:
   container.innerHTML = `<h3>Pagina no encontrada</hr>`
 }
 
+};
+
+// Carga el template del hash correspondiente
+const routerHash = (hash) => {
+  if(hash === ''){ //hash por defecto muestra home
+    return templateOn('#home');
+  } 
+  else if (hash === '#home') {
+    return templateOn(hash);
+  } 
+  else if (hash === '#register') {
+    console.log('register hash working');
+    return templateOn(hash);
+  } 
+  else if (hash === '#login') {
+    return templateLogin(hash);
+  } 
+  else if (hash === '#forum') {
+    console.log('forum hash working');
+    return templateOn('#forum');
+  }
 };

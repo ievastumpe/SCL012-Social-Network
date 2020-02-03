@@ -432,8 +432,6 @@ export default [
   "alive": true,
   "image" :""
 
-<<<<<<< HEAD
-=======
 },
 {
   "name": "Colegio Echaurren",
@@ -498,7 +496,6 @@ export default [
   "alive": true,
   "image" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZJ4qD6OahsqdM_gqT9V5098HYFetgD9dXnFqgkXHOQjoZ8Drk_g&s"
 
->>>>>>> bd60843648577594628e61ec98fb593f0b3f0cad
 }
 
 ];

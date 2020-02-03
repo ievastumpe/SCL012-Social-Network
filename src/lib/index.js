@@ -98,32 +98,3 @@ export const logOut = () => {
         console.log(error)
     })
 }
-<<<<<<< HEAD
-=======
-
-//Función para mandar email a usuario y verificar cuenta
-
-export const verificar = () => {
-    const user = firebase.auth().currentUser;
-
-    user.sendEmailVerification().then(function() {
-        console.log("sending email...");
-    }).catch(function(error) {
-        console.log(error);
-    })
-}
-
-//Iniciar cambio de hash
-
-// export const initChange= () => {
-//     window.addEventListener('load', changeRouter(window.location.hash));
-//     // reconoce un cambio en el hash y le pasa ese nuevo hash a changeRouter
-//     if ('onhashchange' in window) {
-//       window.onhashchange = () => {
-//         changeRouter(window.location.hash);
-//       }
-//     }
-    
-//   }
-
->>>>>>> bd60843648577594628e61ec98fb593f0b3f0cad
