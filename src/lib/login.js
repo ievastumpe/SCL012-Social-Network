@@ -1,51 +1,62 @@
 import { login } from './index.js';
-import { templateRegister } from './register.js';
 
-export const templateLogin = () => {
-    console.log('holaaa Login')
-    window.location.hash = '#login'
-    const containerLogin = document.createElement('div');
-    containerLogin.setAttribute('class', 'loginStyle');
-    const contentLogin = `
-    <header>
-    <div class="logo">
-    <img class="apiLogoStyle" src="img/fontApoderapi.png" alt="apoderapiLogo">
-    </div>
-    </header>
-    <div class="register-box">
-    <main>
+export const templateLogin = (cb) => {
+  console.log("holaaaaa")
+  window.location.hash = '#login';
+  const containerCreate = document.createElement('div');
+  containerCreate.setAttribute('class', 'loginStyle');
+
+  const contentCreate = `
+  <header>
+  <div class="logo">
+  <img class="apiLogoStyle" src="img/apoderapiFlat.png" alt="apoderapiLogo">
+  <img class="apiNameStyle" src="img/logosinfondo.png" alt="apoderapiLogo">
+  </div>
+  </header>
+    <main class="mainStyle">
+    <div class="login-box">
     <h3 class="titleForm">Ingresa a tu cuenta</h3>
-    <form>
-    <input class="inputForm" type="email" id="emailLogin" placeholder="Ingresa tu email" class="input" required>
-    <input class="inputForm" type="password" id="passwordLogin" placeholder="Ingresa tu contraseña" class="input" required>
-    <button class="btnFormStyle" id="enterLogin" class="btn">Acceder</button><br>
-    <a class="forgottenP" id="forgottenPass" href="#">¿Olvidaste tu contraseña?</a>
-    </form>
+    <input class="inputForm" type="email" id="emailLogin" placeholder="Ingresa tu email" required>
+    <input class="inputForm" type="password" id="passwordLogin" placeholder="Ingresa tu contraseña" required>
+    <a class="forgottenP" id="forgottenPass" href="#">¿Olvidaste tu contraseña?</a><br>
+    <button id="enterLogin" class="btnFormStyle">Acceder</button>
+    <br>
     </div>
+    <div class="linksStyle">
     <p>¿No tienes una cuenta?</p>
     <a id="toRegister" href="#register">Regístrate acá</a><br>
-    </main>`;
-    containerLogin.innerHTML = contentLogin;
-    document.getElementById("content").innerHTML = contentLogin;
+    </div>
+    </main>
+    `;
+  containerCreate.innerHTML = contentCreate;
 
+  setTimeout(() => {
+    // document.getElementById("content").innerHTML = contentCreate;
+    const enterLogin = containerCreate.querySelector('#enterLogin');
+    const goToRegister = containerCreate.querySelector('#toRegister');
 
-   const toRegister = containerLogin.querySelector('#toRegister').value;
-   const container = document.getElementById('content');
-
-   toRegister.addEventListener('click', () => {
-      container.innerHTML = '';
-      templateRegister();
-      window.location.hash = '#register';
-      console.log("boton to register funciona");
-      });
-
-    const enterLogin = containerLogin.querySelector('#enterLogin');
-
+    // Iniciar sesión de usuario ya registrado
     enterLogin.addEventListener('click', () => {
-      console.log('button enterLogin working');
+      console.log('click');
+      const emailLogin = containerCreate.querySelector('#emailLogin').value;
+      console.log(emailLogin);
+      const passwordLogin = containerCreate.querySelector('#passwordLogin').value;
+      console.log(passwordLogin);
+      const container = document.getElementById('content');
+      container.innerHTML = '';
       login(emailLogin, passwordLogin);
-      const emailLogin = containerLogin.querySelector('#emailLogin').value;
-      const passwordLogin = containerLogin.querySelector('#passwordLogin').value;
       window.location.hash = '#home';
+
     });
+
+    // Ir a página de registro
+    goToRegister.addEventListener('click', () => {
+      console.log('boton vuelta a signUp funciona');
+      const container = document.getElementById('content');
+      container.innerHTML = '';
+      window.location.hash = '#register';
+    });
+
+    cb(containerCreate);
+  }, 0);
 };
